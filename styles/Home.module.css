@@ -1,0 +1,38 @@
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+  height: auto;
+}
+
+.loginContainer{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+  height: 50rem;
+}
+.homeGrid{
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+}
+
+/* QUESTION PAGE */
+
+.questionsPage, .blogsPage, .trainerPage, .classesPage, .profilePage, .lessonPage{
+  margin-top: 20px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+/* BLOG PAGE */
+
+/* SEARCH */
+
+.SearchUser{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+}

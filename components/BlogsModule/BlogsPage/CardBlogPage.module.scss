@@ -1,0 +1,245 @@
+.cardBlogsLeft {
+  width: 100%;
+}
+
+.cardBlogLeftMap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+}
+
+.tagBlog {
+  background: #228099;
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.tagBlog:hover {
+  cursor: pointer;
+  background: #1c84a1;
+}
+/* CARD BLOG PAGE RIGHT DETAIL */
+
+.cardBlogRightDetail {
+  margin-top: 30px;
+}
+
+.ourTeam {
+  box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
+  padding: 30px 0 30px;
+  margin-bottom: 40px;
+  background-color: #f7f5ec;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.ourTeam .picture {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.ourTeam .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: #228099;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.ourTeam:hover .picture::before {
+  height: 100%;
+}
+
+.ourTeam .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #228099;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.ourTeam .picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.ourTeam:hover .picture img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+
+.ourTeam .title {
+  display: block;
+  font-size: 15px;
+  color: #4e5052;
+  text-transform: capitalize;
+}
+
+.ourTeam .social {
+  background-color: #228099;
+  bottom: -100px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transition: all 0.5s ease 0s;
+  width: 100%;
+}
+
+.ourTeam:hover .social {
+  bottom: 0;
+}
+
+.ourTeam .social {
+  color: white;
+  font-size: 17px;
+  padding: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.ourTeam .button {
+  background: none;
+  border-radius: 8px;
+  border: none;
+  color: white !important;
+  font-size: 0.9rem;
+  padding: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.ourTeam .social .button:hover {
+  cursor: pointer;
+  color: #228099 !important;
+  background-color: #f7f5ec;
+}
+
+.teamContent h3 {
+  margin: 10px 0 0 0;
+}
+
+.countBlog {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.ourTeam .button a{
+  color: #ffffff;
+}
+
+.ourTeam .button a:hover{
+  color: #228099;
+}
+
+// CREATE BLOG
+
+.tagsInput {
+	align-items: flex-start;
+	border-radius: 6px;
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 48px;
+	width: 100%px;
+	input {
+		flex: 1;
+		border: none;
+		height: 46px;
+		font-size: 14px;
+		padding: 4px 0 0 0;
+		&:focus {
+			outline: transparent;
+		}
+	}
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 8px 0 0 0;
+}
+
+.tag {
+	align-items: center;
+	background: #aaaaaa;
+	border-radius: 6px;
+	color: #fff;
+	display: flex;
+	font-size: 14px;
+	height: 32px;
+	justify-content: center;
+	list-style: none;
+	margin: 0 8px 8px 0;
+	padding: 0 8px;
+	width: auto;
+	.tagTitle {
+		margin-top: 3px;
+	}
+	.tagCloseIcon {
+		background: #fff;
+		border-radius: 50%;
+		color: #aaaaaa;
+		cursor: pointer;
+		display: block;
+		font-size: 14px;
+		height: 16px;
+		line-height: 16px;
+		margin-left: 8px;
+		text-align: center;
+		width: 16px;
+	}
+}
+
+.cardBlogLeftHeader{
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+// CARD BLOG RIGHT
+.cardBlogRight h3{
+  padding: 7px 0;
+}
+.topTrainerButton .primary {
+  border: 1px solid #03bfcb;
+  border-radius: 5px;
+  color: #228099;
+  font-weight: 500;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.topTrainerButton .primary:hover {
+  background-color: #228099 !important;
+  cursor: pointer;
+}
+
+.topTrainerButton .primary a:hover {
+  color: #fdc632 !important;
+}

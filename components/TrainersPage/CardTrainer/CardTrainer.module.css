@@ -1,0 +1,65 @@
+.topTrainerCardContainer {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 10px;
+  color: #ffffff;
+  padding-top: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  margin: 5px;
+}
+
+.topTrainerCardContainer h3 {
+  margin: 10px 0;
+}
+
+.topTrainerCardContainer .round {
+  border: 1px solid #03bfcb;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.topTrainerButton .primary {
+  border: 1px solid #03bfcb;
+  border-radius: 5px;
+  color: #228099;
+  font-weight: 500;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.topTrainerButton .primary:hover {
+  background-color: #228099;
+  color: #fdc632;
+  cursor: pointer;
+}
+
+.topTrainerSkills {
+  background-color: #5682da;
+  text-align: left;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.topTrainerSkills > h6 {
+  margin: 2px 0;
+  text-transform: uppercase;
+}
+
+.topTrainerSkills > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topTrainerSkills ul li {
+  border: 1px solid #2d2747;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 10px;
+  margin: 0 5px 5px 0;
+  padding: 3px;
+}

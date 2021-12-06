@@ -1,0 +1,153 @@
+/* cardQuestionLeft */
+.askQuestion{
+  background: #228099;
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.askQuestion:hover{
+  cursor: pointer;
+  background: #15738d;
+}
+
+.cardQuestionTag{
+  padding: 10px;
+}
+
+.cardQuestionTag > span{
+  margin-left: 5px;
+}
+
+.cardQuestionTagDetail li{
+  margin: 10px 30px;
+  list-style: none;
+} 
+
+.cardQuestionTagDetail button{
+  border: none;
+  border-radius: 10px;
+  padding: 4px 10px;
+  color: #7a7a7a;
+} 
+
+/* cardQuestionCenter */
+.cardQuestionCenter{
+  margin: 0 20px;
+}
+/* cardQuestionRight */
+.cardQuestionRight{
+  margin: 0 20px;
+}
+
+.mostUsedTag{
+  text-transform: uppercase;
+  font-weight: bolder;
+  border-bottom: 2px solid #228099;
+  width: fit-content;
+}
+
+.cardQuestionTagDetailRight li{
+  margin: 10px 0px;
+  list-style: none;
+} 
+
+.cardQuestionTagDetailRight button{
+  border: none;
+  border-radius: 10px;
+  padding: 4px 10px;
+  color: #7a7a7a;
+} 
+
+/* CARD QUESTION CENTER DETAIL */
+
+.cardQuestionCenterHeader{
+  display: flex;
+}
+
+.cardQuestionCenterHeader p {
+  margin: 0;
+  width: 15%;
+}
+
+.cardQuestionCenterHeader h3 {
+  margin: 0;
+  line-height: 1;
+}
+
+.cardQuestionCenterHeader span{
+  margin-left: 3px;
+}
+
+.cardQuestionCenterDetailAnswer{
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;;
+}
+
+.cardQuestionCenterDetailAnswer p {
+  margin: 5px 0;
+}
+
+
+// CREATE QUESTION
+
+.tagsInput {
+	align-items: flex-start;
+	border-radius: 6px;
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 48px;
+	width: 100%px;
+	input {
+		flex: 1;
+		border: none;
+		height: 46px;
+		font-size: 14px;
+		padding: 4px 0 0 0;
+		&:focus {
+			outline: transparent;
+		}
+	}
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 8px 0 0 0;
+}
+
+.tag {
+	align-items: center;
+	background: #aaaaaa;
+	border-radius: 6px;
+	color: #fff;
+	display: flex;
+	font-size: 14px;
+	height: 32px;
+	justify-content: center;
+	list-style: none;
+	margin: 0 8px 8px 0;
+	padding: 0 8px;
+	width: auto;
+	.tagTitle {
+		margin-top: 3px;
+	}
+	.tagCloseIcon {
+		background: #fff;
+		border-radius: 50%;
+		color: #aaaaaa;
+		cursor: pointer;
+		display: block;
+		font-size: 14px;
+		height: 16px;
+		line-height: 16px;
+		margin-left: 8px;
+		text-align: center;
+		width: 16px;
+	}
+}

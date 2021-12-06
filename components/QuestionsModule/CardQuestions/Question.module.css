@@ -1,0 +1,351 @@
+.questionCard {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 20px 0px;
+  min-width: 0;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.questionHeader {
+  align-items: center;
+  display: flex;
+}
+.questionAva {
+  display: inline-block;
+  position: relative;
+  width: 8%;
+  margin-bottom: auto;
+}
+
+.questionThumb {
+  display: inline-block;
+  position: relative;
+  margin-inline-start: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.questionThumb i:hover {
+  cursor: pointer;
+}
+
+.questionThumbImage {
+  margin: 0;
+  display: block;
+}
+
+.questionTitle {
+  width: 80%;
+}
+
+.questionTitleContent {
+  margin: 0;
+  color: #000000 !important;
+}
+
+.questionAuthor {
+  display: flex;
+  margin-top: 2px;
+}
+
+.questionAuthor > span {
+  color: #228099;
+}
+
+.questionAuthor > p {
+  color: #999999;
+  margin-left: 5px;
+}
+
+.questionButton {
+  margin-top: 10px;
+  display: flex;
+}
+.questionButton .dum {
+  width: 8%;
+}
+.questionButton > button {
+  border: none;
+  background-color: #eeeeee;
+  border-radius: 6px;
+  color: #ffffff;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.questionCard > button {
+  border: none;
+  background: none;
+  background-color: #c4c4c4;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: #ffffff;
+}
+
+.questionDescript {
+  margin-top: 10px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.questionMore {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonPrimary {
+  border: none;
+  box-shadow: none;
+  font-family: inherit;
+  background-color: transparent;
+  color: #228099;
+  font-size: 15px;
+}
+
+.buttonPrimary:hover {
+  color: #7bdaff;
+  cursor: pointer;
+  outline: none;
+  transition: 0.25s;
+}
+.buttonPrimary:focus {
+  cursor: pointer;
+  outline: none;
+}
+
+.questionMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.questionMetaCommon {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 8px 0;
+  box-shadow: none;
+  transition: 0.4s;
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: #606770;
+}
+.questionMetaCommon:hover {
+  background: #f7f7f7;
+  border: none;
+  border-radius: 10px;
+}
+.questionMetaCommon span {
+  margin-left: 5px;
+}
+
+.questionMetaLike {
+  width: 30%;
+}
+.questionMetaComment {
+  width: 30%;
+}
+
+.questionMetaComment a {
+  width: 30%;
+  color: #606770 !important;
+}
+
+.questionMetaShare {
+  width: 30%;
+}
+
+/* Question Detail */
+
+.questionCardDetail {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
+  display: flex;
+  height: auto;
+  margin: 20px 0px;
+  min-width: 0;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.questionCardDetailButton {
+  display: grid;
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  margin: auto;
+  color: #999999;
+}
+
+.questionCardDetailButton:hover {
+  cursor: pointer;
+  color: #228099;
+}
+
+.questionCardDetailButton span {
+  margin-bottom: 5px;
+}
+
+.questionCardLeftDetail {
+  width: 12%;
+  padding-right: 20px;
+}
+
+.questionCardRight {
+  width: 100%;
+}
+
+.questionButtonDetail {
+  display: flex;
+  margin-bottom: 10px;
+}
+.questionButtonDetail .dum {
+  width: 10%;
+}
+.buttonLink {
+  border: none;
+  background-color: #eeeeee;
+  border-radius: 6px;
+  margin-right: 5px;
+  padding: 5px 12px;
+}
+
+.buttonLink a {
+  color: #645f6d !important;
+}
+
+.buttonLink:hover {
+  background-color: #bbbbbb;
+  transition: 0.4s;
+}
+
+.questionAvaDetail {
+  display: flex;
+  margin-top: 10px;
+}
+
+.questionAuthorDetail {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.questionAuthorDetail > span {
+  color: #228099;
+  margin-left: 10px;
+}
+
+.questionAuthorDetail > p {
+  color: #999999;
+  margin-left: 5px;
+}
+
+.questionButtonShareDetail {
+  align-self: center;
+  width: 20%;
+  max-width: fit-content;
+}
+
+.questionContentDetail {
+  width: 90%;
+  float: right;
+}
+
+.questionCommentButton {
+  display: flex;
+  border: none;
+  background: none;
+}
+
+/* QUESTION CARD COMMENT */
+.questionCardComment {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  height: auto;
+  margin: 10px 0 0 0px;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+/* CARD TAG QUESTION */
+
+.tagQuestionTag a {
+  color: #645f6d !important;
+}
+
+.tagQuestionTag:hover {
+  background-color: #bbbbbb;
+  transition: 0.4s;
+}
+
+/* QUESTION RELATED */
+.recentPostsContent {
+  margin-bottom: 20px;
+}
+.hotQues {
+  text-transform: uppercase;
+  font-weight: bolder;
+  border-bottom: 2px solid #228099;
+  width: fit-content;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.hotQuesDetail {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  color: #228099;
+  position: relative;
+  display: inline-block;
+}
+
+.hotQuesDetail::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin: 5px 0;
+  width: 50%;
+  height: 2px;
+  background: #868686;
+}
+
+.titleQuesDetail {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.titleQuesDetail a {
+  color: #303030 !important;
+}
+
+.titleQuesDetail a:hover {
+  color: #228099 !important;
+}
+
+.nameQuestionDetail {
+  font-style: italic;
+  color: #868686;
+}
+
+.nameQuestionDetail a {
+  color: #9ba9c8 !important;
+}
+
+.nameQuestionDetail a:hover {
+  color: #7185b1 !important;
+}

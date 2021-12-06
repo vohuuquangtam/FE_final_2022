@@ -1,0 +1,81 @@
+.cardTrainersLefHeader{
+	/* border-left: 3px solid #228099; */
+	padding-left: 5px;
+}
+.cardTrainersLeftDetail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2em;
+	margin-top: 30px;
+}
+
+.cardTrainerPageRight {
+  margin-left: 10px;
+}
+
+.cardTrainersRightButton {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.cardTrainerPageButtonTop {
+  background-color: #228099;
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding: 15px;
+  width: 100%;
+}
+
+.cardTrainerPageButtonTop:hover {
+	cursor: pointer;
+	background-color: #26778d;
+}
+
+.cardTrainerPageButton {
+  background-color: #1795c7;
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 15px;
+  width: 100%;
+}
+.cardTrainerPageButton:hover {
+	cursor: pointer;
+	background-color: #1e83ac;
+}
+
+.cardTrainerPageChoose {
+  font-size: 1.5rem;
+}
+
+.cardTrainerPageChoose p {
+  margin-bottom: 25px;
+}
+
+.cardTrainerPageChoose span {
+  font-weight: bold;
+}
+
+.cardTrainerPageButtonChoose {
+  background: rgb(15, 101, 217);
+  background: linear-gradient(
+    90deg,
+    rgba(15, 101, 217, 1) 0%,
+    rgba(0, 198, 255, 1) 100%
+  );
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.cardTrainerPageButtonChoose a{
+  color: #ffffff !important;
+}
