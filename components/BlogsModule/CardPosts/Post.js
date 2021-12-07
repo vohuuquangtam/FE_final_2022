@@ -41,7 +41,7 @@ const Post = ({ post }) => {
           </span>
         </div>
         <div className={styles.postThumb}>
-          <figure className={styles.postThumbImage}>
+        <figure className={styles.postThumbImage} style={{paddingRight: '10px', display: 'flex', justifyContent: 'end', marginBottom: '5px'}}>
             <img
               src={"/static/iconBlog.png"}
               alt="iconBlog"
@@ -50,7 +50,24 @@ const Post = ({ post }) => {
           </figure>
           {user && user.id && post.author.id === user.id ? (
             <>
-              <Dropdown
+                 <div style={{ display: 'flex', justifyContent: 'center'}}>
+                <div style={{marginRight: '5px'}}>
+                <Link href={`/posts/${id}/edit`}>
+                    <a>
+                      <Button fluid color="green" animated="vertical">
+                        <Button.Content visible>Edit</Button.Content>
+                        <Button.Content hidden>
+                          <Icon name="edit" />
+                        </Button.Content>
+                      </Button>
+                    </a>
+                  </Link>
+                </div>
+                <div style={{marginRight: '5px'}}>
+                  <DeleteBlog post={post}/>
+                </div>
+              </div>
+              {/* <Dropdown
                 pointing="top right"
                 icon={null}
                 trigger={<i className="fas fa-ellipsis-h"></i>}
@@ -72,7 +89,7 @@ const Post = ({ post }) => {
                     <DeleteBlog post={post} />
                   </Dropdown.Item>
                 </Dropdown.Menu>
-              </Dropdown>
+            </Dropdown> */}
             </>
           ) : (
             ""
@@ -87,17 +104,17 @@ const Post = ({ post }) => {
         />
       </div>
       <div className={styles.postContent}>
-        <p className={styles.postDescript}>{post.subTitle}</p>
+      <p className={styles.postDescript} title={post.subTitle}>{post.subTitle}</p>
         <div className={styles.postMore}>
           <button className={styles.buttonPrimary}>
             <Link href={`/posts/${id}`}>
               <a>
-                <i className="fa fa-chevron-right"></i> Read more
+              <i className="fa fa-info-circle"></i> Read more
               </a>
             </Link>
           </button>
           <div className={styles.faTag}>
-            <i className="fa fa-tag"></i>
+          <i className="fa fa-tag" style={{color: '#4183c4', fontSize: '18px', marginRight: '8px' }}></i>
             {post.tags &&
               post.tags.map((tag, idex) => {
                 return (
@@ -128,13 +145,13 @@ const Post = ({ post }) => {
               tabIndex="0"
             >
               <Link href={`posts/${post.id}`}>
-                <a className="ui basic red right pointing label">
+              <a className="ui basic blue right pointing label">
                   {post.comments.length} comment
                   {post.comments.length > 1 ? "s" : ""}
                 </a>
               </Link>
-              <div className="ui red icon tiny button">
-                <i className="external comment large icon"></i>
+              <div className="ui blue icon tiny button">
+                <i className="external comment large icon" style={{ fontSize: '1em'}}></i>
               </div>
             </div>
           </div>

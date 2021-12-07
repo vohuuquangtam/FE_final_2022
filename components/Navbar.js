@@ -20,7 +20,7 @@ function Navbar() {
 
   const trigger = (
     <span >
-      <Image className='ImageNavbar' avatar src={_user && _user.avatarUrl} />
+      <Image className='ImageNavbar' avatar src={_user && _user.avatarUrl} style={{width: '2.5em', height: '2.5em'}}/>
     </span>
   );
 
@@ -99,7 +99,7 @@ function Navbar() {
           crossOrigin="anonymous"
         />
       </Head>
-      <nav className="NavbarItems">
+      <nav className="NavbarItems row">
         <Link href="/">
           <img
             className="navbarLogo"

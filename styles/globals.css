@@ -38,7 +38,7 @@ body {
 /* NAVBAR */
 .NavbarItems {
   align-items: center;
-  background: green;
+  background: #4183c4;
   border-bottom: 1px solid #808080;
   box-shadow: 0px 2px 10px 0px #808080;
   display: flex;

@@ -36,14 +36,14 @@ function CardBlogLeftDetail({ post, comments }) {
       <div className={styles.cardBlogLeftHeader}>
         <Link href="/posts">
           <a>
-            <i className="fas fa-angle-double-left"></i>
-            <span> All Blogs</span>
+          <i className="fas fa-chevron-left"></i>
+            <span> Back</span>
           </a>
         </Link>
       </div>
       <PostDetail post={post} />
       <Header as="h3" dividing>
-        {comments.length} Answer{comments.length > 1 ? "s" : ""}
+      Answer{comments.length > 1 ? "s" : ""}({comments.length})
       </Header>
       {comments.map((comment, id) => {
         return <PostComment comment={comment} key={id} />;

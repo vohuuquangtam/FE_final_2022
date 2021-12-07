@@ -25,7 +25,7 @@ function Home({ home, classes }) {
       style={{ width: "100%" }}
       className={`${styles.container} ${styles.homeGrid}`}
     >
-      <div style={{ width: "100%", paddingLeft: "20px", gridColumn: "1/3" }}>
+      <div style={{ width: "100%", paddingLeft: "20px", gridColumn: "1/3", marginTop: "10px" }}>
         {renderComponents()}
       </div>
       <div style={{ width: "100%", paddingRight: "20px", marginTop: "20px" }}>

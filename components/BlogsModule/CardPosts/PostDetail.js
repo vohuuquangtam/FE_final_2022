@@ -7,13 +7,7 @@ import styles from "./Post.module.scss";
 const PostDetail = ({ post }) => {
   return (
     <div className={styles.postCard}>
-      <div className={styles.postImage}>
-        <img
-          src={post.featuredImage}
-          alt="imageBlog"
-          style={{ width: "100%" }}
-        />
-      </div>
+ 
       <div className={styles.postDetailBody}>
         <div className={styles.postDetailTime}>
           <p className={styles.postDetailTime1}>
@@ -43,15 +37,27 @@ const PostDetail = ({ post }) => {
               <span style={{ fontWeight: "bold" }}>Tags: </span>
               {post.tags.map((tag, id) => {
                 return (
-                  <Link href={`/posts/tag-post/${tag.id}`} key={id}>
-                    <a> {tag.name}</a>
-                  </Link>
+                  // <Link href={`/posts/tag-post/${tag.id}`} key={id}>
+                  //   <a> {tag.name}</a>
+                  // </Link>
+                  <button className={styles.faTagButton} key={id}>
+                    <Link href={`/posts/tag-post/${tag.id}`}>
+                      <a>{tag.name}</a>
+                    </Link>
+                  </button>
                 );
               })}
             </p>
           </div>
-          <div style={{ fontStyle: "italic", marginBottom: "20px" }}>
+          <div style={{ fontStyle: "italic", fontSize: "14px" }}>
             <ReactMarkdown>{post.subTitle}</ReactMarkdown>
+          </div>
+          <div className={styles.postImage}>
+            <img
+              src={post.featuredImage}
+              alt="imageBlog"
+              style={{ width: "100%" }}
+            />
           </div>
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>

@@ -31,13 +31,13 @@
 .ourTeam {
   box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
   padding: 30px 0 30px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   background-color: #f7f5ec;
   text-align: center;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
-  width: 80%;
+  width: 100%;
 }
 
 .ourTeam .picture {
@@ -51,14 +51,14 @@
 
 .ourTeam .picture::before {
   content: "";
-  width: 100%;
+  width: 140%;
   height: 0;
   border-radius: 50%;
   background-color: #228099;
   position: absolute;
   bottom: 135%;
   right: 0;
-  left: 0;
+  left: -20%;
   opacity: 0.9;
   transform: scale(3);
   transition: all 0.3s linear 0s;
@@ -226,20 +226,29 @@
   padding: 7px 0;
 }
 .topTrainerButton .primary {
-  border: 1px solid #03bfcb;
+  border: 2px solid #228099;
   border-radius: 5px;
-  color: #228099;
-  font-weight: 500;
+  color: #fff;
+  font-weight: 600;
   margin-top: 10px;
-  padding: 5px 10px;
-  background-color: transparent;
+  padding: 7px 10px;
+  background-color: #228099;
+}
+
+.topTrainerButton .primary a {
+  color: #fff;
 }
 
 .topTrainerButton .primary:hover {
-  background-color: #228099 !important;
+  background-color: #fff !important;
   cursor: pointer;
+  a {
+    color: #228099 !important;
+    font-weight: 600;
+  }
 }
 
-.topTrainerButton .primary a:hover {
-  color: #fdc632 !important;
-}
+// .topTrainerButton .primary a:hover {
+//   color: #228099 !important;
+//   font-weight: 600;
+// }

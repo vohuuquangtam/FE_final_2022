@@ -52,35 +52,37 @@ function PostRelated(props) {
     <>
       {data && data.length === 0 ? (
         <>
-          <h3>Oldest Blogs</h3>
-          {dataPost.map((datPost, idx) => (
-            <div key={idx} className={styles.recentPostsContent}>
-              <div className={styles.recentPostsImageWrapper}>
-                <Link href={`/posts/${datPost.id}`}>
-                  <img src={datPost.featuredImage} alt="avt" />
-                </Link>
-              </div>
-              <div className={styles.recentPostsContentWrapper}>
-                <div className={styles.postTitle}>
-                  <h4>
+        <div className={styles.ourTeam}>
+              <h3>Oldest Blogs</h3>
+              {dataPost.map((datPost, idx) => (
+                <div key={idx} className={styles.recentPostsContent}>
+                  <div className={styles.recentPostsImageWrapper}></div>
                     <Link href={`/posts/${datPost.id}`}>
-                      <a> {datPost.title} </a>
+                    <img src={datPost.featuredImage} alt="avt" />
                     </Link>
-                  </h4>
+                    </div>
+                  <div className={styles.recentPostsContentWrapper}>
+                    <div className={styles.postTitle}>
+                      <h4>
+                        <Link href={`/posts/${datPost.id}`}>
+                          <a> {datPost.title} </a>
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className={styles.metaWrapper}>
+                      <span>{moment(datPost.createdAt).format("lll")}</span>
+                    </div>
+                    <div className={styles.nameWrapper}>
+                      <span>
+                        <Link href={`/profile/${datPost.author.id}`}>
+                          <a> {datPost.author.name} </a>
+                        </Link>
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className={styles.metaWrapper}>
-                  <span>{moment(datPost.createdAt).format("lll")}</span>
+                ))}
                 </div>
-                <div className={styles.nameWrapper}>
-                  <span>
-                    <Link href={`/profile/${datPost.author.id}`}>
-                      <a> {datPost.author.name} </a>
-                    </Link>
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
         </>
       ) : (
         <>
