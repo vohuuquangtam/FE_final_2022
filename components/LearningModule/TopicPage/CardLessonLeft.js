@@ -235,7 +235,7 @@ export default function CardLessonLeft({ classe, lessons }) {
                 />
               </Form.Field>
             </Form.Group>
-            <div style={{ margin: "20px 0" }}>
+            <div style={{ margin: "20px 0", display: "flex", justifyContent: "center" }}>
               <Button
                 color="youtube"
                 content="Reset"

@@ -48,15 +48,15 @@ function CardProfileLeft({ userAcc, trainers }) {
         </div>
         <div className={styles.socialIcons}>
           <div className={styles.icon}>
-            <h4>{userAcc.posts.length}</h4>
+          <h3>{userAcc.posts.length}</h3>
             <p>Blogs</p>
           </div>
           <div className={styles.icon}>
-            <h4>0</h4>
+          <h3>0</h3>
             <p>Classes</p>
           </div>
           <div className={styles.icon}>
-            <h4>{userAcc.questions.length}</h4>
+          <h3>{userAcc.questions.length}</h3>
             <p>Questions</p>
           </div>
         </div>

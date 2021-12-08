@@ -298,6 +298,7 @@
 .recentPostsContent{
   display: flex;
   margin-top: 20px;
+  padding: 12px;
   .recentPostsImageWrapper{
     margin-right: 10px;
     height: 60px;
@@ -309,6 +310,17 @@
     }
     &:hover{
       cursor: pointer;
+    }
+  }
+  .recentPostsContentWrapper {
+    width: 80%;
+    text-align: left;
+    .postTitle {
+      a {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
   }
   .metaWrapper{

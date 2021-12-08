@@ -27,11 +27,11 @@ function Classe({ classe }) {
 
             <div className={styles.courseInstructor}>
               <Link href={`/profile/${classe.trainer.user.id}`}>
-                <a>{classe.trainer.user.name}</a>
+                <a>@{classe.trainer.user.name}</a>
               </Link>
             </div>
             <Link href={`/classes/${classe.id}`}>
-              <a>
+            <a style={{textAlign: 'center'}}>
                 <h3 className={styles.courseTitle}>{classe.name}</h3>
               </a>
             </Link>

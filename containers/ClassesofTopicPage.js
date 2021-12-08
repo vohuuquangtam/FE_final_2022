@@ -7,7 +7,7 @@ class ClassesOfTopicPage extends Component {
   render() {
     return (
       <div className={styles.classesPage}>
-        <div style={{ width: "60%" }}>
+       <div style={{ width: "60%"}}>
           <CardClassesLeftOfTopic {...this.props} />
         </div>
         <div style={{ width: "30%", marginLeft: "20px" }}>

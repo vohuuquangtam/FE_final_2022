@@ -52,10 +52,17 @@ body {
 }
 
 .NavbarItems li {
-  margin: 0 1.2rem;
+  /* margin: 0 1.2rem; */
+  padding: 5px 20px;
 }
 .actived {
-  border-bottom: 2px solid #fffea5;
+  /* border-bottom: 2px solid #fffea5; */
+  background-color: #fff;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+.actived a {
+  color: #4183c4;
 }
 .navbarLogo {
   justify-self: start;
@@ -83,7 +90,11 @@ body {
 
 .navLinks:hover {
   transition: 0.4s;
-  color: #fff0e9;
+  /* color: #fff0e9; */
+  background-color: #fff;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: #4183c4;
 }
 .fa-bars {
   color: #ffffff;
