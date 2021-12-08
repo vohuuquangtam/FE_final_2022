@@ -11,19 +11,19 @@ function CardTrainerPage({ user }) {
         alt="user"
         width="90px"
       />
-      <h3 className={styles.topTrainerName}>
-        <Link href={`/profile/${user.id}`}>
-          <a>{user.name}</a>
-        </Link>
-      </h3>
-      <div className={styles.topTrainerButton}>
-        <button className={styles.primary}>Follow</button>
-      </div>
+      
       <div className={styles.topTrainerSkills}>
-        <h4>Email</h4>
-        <ul>
-          <li>{user.email}</li>
-        </ul>
+      <h3 className={styles.topTrainerName} style={{textAlign: 'center'}}>
+          <Link href={`/profile/${user.id}`}>
+            <a style={{color: '#fff'}}>{user.name}</a>
+          </Link>
+        </h3>
+        <div style={{display: "flex", justifyContent: 'center'}}>
+          <p>Email: {user.email}</p>
+        </div>
+        <div className={styles.topTrainerButton} style={{display: 'flex', justifyContent: 'center', marginTop: '18px'}}>
+            <button className={styles.primary}>Follow</button>
+        </div>
       </div>
     </div>
   );

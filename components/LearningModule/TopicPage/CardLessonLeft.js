@@ -87,7 +87,7 @@ export default function CardLessonLeft({ classe, lessons }) {
                     >
                       <Icon name="dropdown" />
                       <span
-                        style={{ textTransform: "uppercase", color: "#228099" }}
+                          style={{ textTransform: "uppercase", color: "#4183c4" }}
                       >
                         {lesson.name}
                       </span>

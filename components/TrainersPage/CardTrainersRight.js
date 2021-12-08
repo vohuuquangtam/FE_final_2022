@@ -9,7 +9,7 @@ function CardTrainersRight({ users }) {
   return (
     <div className={styles.cardTrainerPageChoose}>
       <div>
-        <p>
+      <p style={{textAlign: 'center'}}>
           <span>Find a Trainer</span> & Choose a Class Today.
         </p>
         <img src="/static/ct-1.jpg" alt="ct1" width="100%" />

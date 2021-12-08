@@ -56,7 +56,7 @@
 }
 
 .questionAuthor > span {
-  color: #228099;
+  color: #4183c4;
 }
 
 .questionAuthor > p {
@@ -106,7 +106,7 @@
   box-shadow: none;
   font-family: inherit;
   background-color: transparent;
-  color: #228099;
+  color: #4183c4;
   font-size: 15px;
 }
 
@@ -190,7 +190,7 @@
 
 .questionCardDetailButton:hover {
   cursor: pointer;
-  color: #228099;
+  color: #4183c4;
 }
 
 .questionCardDetailButton span {
@@ -242,7 +242,7 @@
 }
 
 .questionAuthorDetail > span {
-  color: #228099;
+  color: #4183c4;
   margin-left: 10px;
 }
 
@@ -298,8 +298,8 @@
 .hotQues {
   text-transform: uppercase;
   font-weight: bolder;
-  border-bottom: 2px solid #228099;
-  width: fit-content;
+  border-bottom: 2px solid #4183c4;
+    width: fit-content;
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -307,7 +307,7 @@
 .hotQuesDetail {
   margin-bottom: 10px;
   margin-top: 5px;
-  color: #228099;
+  color: #4183c4;
   position: relative;
   display: inline-block;
 }
@@ -334,7 +334,7 @@
 }
 
 .titleQuesDetail a:hover {
-  color: #228099 !important;
+  color: #4183c4 !important;
 }
 
 .nameQuestionDetail {
