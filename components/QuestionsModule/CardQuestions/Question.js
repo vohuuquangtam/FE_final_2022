@@ -101,7 +101,7 @@ function Question({ question }) {
           <button className={styles.buttonPrimary}>
             <Link href={`/questions/${id}`}>
               <a>
-                <i className="fa fa-chevron-right"></i> Read more
+              <i className="fa fa-info-circle"></i> Read more
               </a>
             </Link>
           </button>

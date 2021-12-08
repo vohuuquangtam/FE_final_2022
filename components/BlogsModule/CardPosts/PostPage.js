@@ -89,7 +89,7 @@ function PostPage({ post }) {
             <div className={styles.readMoreWrap}>
               <Link href={`/posts/${id}`}>
                 <a>
-                  <i className="fa fa-chevron-right"></i> Read more
+                <i className="fa fa-info-circle"></i> Read more
                 </a>
               </Link>
             </div>

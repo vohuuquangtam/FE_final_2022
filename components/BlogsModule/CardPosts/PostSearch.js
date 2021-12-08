@@ -81,7 +81,7 @@ const PostSearch = ({ post }) => {
           <button className={styles.buttonPrimary}>
             <Link href={`/posts/${id}`}>
               <a>
-                <i className="fa fa-chevron-right"></i> Read more
+              <i className="fa fa-info-circle"></i> Read more
               </a>
             </Link>
           </button>
