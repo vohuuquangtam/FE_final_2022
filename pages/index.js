@@ -44,52 +44,55 @@ function Home({ home, classes }) {
 
  
   return (
-    <div
-      style={{ width: "100%" }}
-      className={`${styles.container} ${styles.homeGrid}`}
-    >
-     <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "20px" }}>
-        <h1 style={{textAlign: 'center'}}>Blogs</h1>
-        <div style={{ display: 'flex',maxWidth: '80vw', overflowX: 'scroll' }}>
-          {homeComponents()}
-        </div>
-      </div>
-      <div style={{ width: "100%", paddingRight: "20px", paddingLeft: "20px", marginTop: "20px" }}>
-        <h1 style={{textAlign: 'center'}}>Classes</h1>
-        <div style={{ marginTop: "20px",  display: 'flex',maxWidth: '80vw', overflowX: 'scroll' }}>
-          {classes.slice(0,10).map((classe, id) => {
-            return (
-              <div style={{padding: '10px', width: '25%'}}>
-                <Classe classe={classe} key={id} />
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "30px" }}>
-        <h1 style={{textAlign: 'center'}}>Questions</h1>
-        <div style={{display: "flex"}}>
-          <div style={{ padding: "10px", width: '70%' }}>
-            {questionComponents()}
-          </div>
-          <div style={{ padding: "10px", marginTop: "20px", width: '30%' }}>
-            {user && <ScheduleTrainer user={user} />}
+    <div style={{display: "flex"}}>
+      <div
+        style={{ width: "70%" }}
+        className={`${styles.container} ${styles.homeGrid}`}
+      >
+        <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "20px" }}>
+          <h1 style={{textAlign: 'center'}}>Blogs</h1>
+          <div style={{ display: 'flex',maxWidth: '80vw', overflowX: 'scroll' }}>
+            {homeComponents()}
           </div>
         </div>
+        <div style={{ width: "100%", paddingRight: "20px", paddingLeft: "20px", marginTop: "20px" }}>
+          <h1 style={{textAlign: 'center'}}>Classes</h1>
+          <div style={{ marginTop: "20px",  display: 'flex',maxWidth: '80vw', overflowX: 'scroll' }}>
+            {classes.slice(0,10).map((classe, id) => {
+              return (
+                <div style={{padding: '10px', width: '25%'}}>
+                  <Classe classe={classe} key={id} />
+                </div>
+              );
+            })}
+          </div>
+          </div>
+        <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "30px" }}>
+          <h1 style={{textAlign: 'center'}}>Questions</h1>
+          <div style={{display: "flex"}}>
+            <div style={{ padding: "10px", width: '70%' }}>
+              {questionComponents()}
+            </div>
+          </div>
+        </div>
+          {/* <div style={{ width: "100%", paddingLeft: "20px", gridColumn: "1/3", marginTop: "10px" }}>
+          {renderComponents()}
+        </div>
+        <div style={{ width: "100%", paddingRight: "20px", marginTop: "20px" }}>
+          {user && <ScheduleTrainer user={user} />}
+          <div style={{ marginTop: "20px" }}>
+            {classes.slice(0,10).map((classe, id) => {
+              return <Classe classe={classe} key={id} />;
+            })}
+          </div>
+        </div> */}
       </div>
-      {/* <div style={{ width: "100%", paddingLeft: "20px", gridColumn: "1/3", marginTop: "10px" }}>
-        {renderComponents()}
-      </div>
-      <div style={{ width: "100%", paddingRight: "20px", marginTop: "20px" }}>
-        {user && <ScheduleTrainer user={user} />}
-        <div style={{ marginTop: "20px" }}>
-          {classes.slice(0,10).map((classe, id) => {
-            return <Classe classe={classe} key={id} />;
-          })}
+      <div style={{ padding: "10px", marginTop: "120px", width: '30%', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: '80%' }}>
+          {user && <ScheduleTrainer user={user} />}
         </div>
       </div>
     </div>
-    </div> */}
   );
 }
 
