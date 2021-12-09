@@ -87,8 +87,8 @@ function Home({ home, classes }) {
           </div>
         </div> */}
       </div>
-      <div style={{ padding: "10px", marginTop: "120px", width: '30%', display: 'flex', justifyContent: 'center', position: 'sticky', top: '0' }}>
-        <div style={{ width: '80%' }}>
+      <div style={{ padding: "10px", marginTop: "120px", width: '30%'  }}>
+        <div style={{ width: '80%', position: 'sticky', top: '68px' }}>
           {user && <ScheduleTrainer user={user} />}
         </div>
       </div>
