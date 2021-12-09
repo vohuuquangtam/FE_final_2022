@@ -9,6 +9,7 @@ import styles from "../styles/Home.module.css";
 
 function Home({ home, classes }) {
   const { user } = useAuth();
+  console.log("home",home);
   const renderComponents = () => {
     return home.map((item, id) => {
       switch (item.type) {
@@ -19,13 +20,64 @@ function Home({ home, classes }) {
       }
     });
   };
+  const homeComponents = () => {
+    return home.map((item, id) => {
+      switch (item.type) {
+        case "post":
+          return (
+            <div style={{padding: '10px', width: '32%'}}>
+              <Post post={item} key={id} />
+            </div>
+          );
+      }
+    });
+  };
 
+  const questionComponents = () => {
+    return home.map((item, id) => {
+      switch (item.type) {
+        case "question":
+          return <Question question={item} key={id} />;
+      }
+    });
+  };
+
+ 
   return (
     <div
       style={{ width: "100%" }}
       className={`${styles.container} ${styles.homeGrid}`}
     >
-      <div style={{ width: "100%", paddingLeft: "20px", gridColumn: "1/3", marginTop: "10px" }}>
+     <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "20px" }}>
+        <h1 style={{textAlign: 'center'}}>Blogs</h1>
+        <div style={{ display: 'flex',maxWidth: '80vw', overflowX: 'scroll' }}>
+          {homeComponents()}
+        </div>
+      </div>
+      <div style={{ width: "100%", paddingRight: "20px", paddingLeft: "20px", marginTop: "20px" }}>
+        <h1 style={{textAlign: 'center'}}>Classes</h1>
+        <div style={{ marginTop: "20px",  display: 'flex',maxWidth: '80vw', overflowX: 'scroll' }}>
+          {classes.slice(0,10).map((classe, id) => {
+            return (
+              <div style={{padding: '10px', width: '25%'}}>
+                <Classe classe={classe} key={id} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "30px" }}>
+        <h1 style={{textAlign: 'center'}}>Questions</h1>
+        <div style={{display: "flex"}}>
+          <div style={{ padding: "10px", width: '70%' }}>
+            {questionComponents()}
+          </div>
+          <div style={{ padding: "10px", marginTop: "20px", width: '30%' }}>
+            {user && <ScheduleTrainer user={user} />}
+          </div>
+        </div>
+      </div>
+      {/* <div style={{ width: "100%", paddingLeft: "20px", gridColumn: "1/3", marginTop: "10px" }}>
         {renderComponents()}
       </div>
       <div style={{ width: "100%", paddingRight: "20px", marginTop: "20px" }}>
@@ -37,6 +89,7 @@ function Home({ home, classes }) {
         </div>
       </div>
     </div>
+    </div> */}
   );
 }
 

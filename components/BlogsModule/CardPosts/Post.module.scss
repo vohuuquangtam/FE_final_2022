@@ -22,7 +22,7 @@
   display: inline-block;
   position: relative;
   // margin-bottom: auto;
-  width: 8%;
+  width: 12%;
   margin-right: 5px;
 }
 
@@ -41,6 +41,7 @@
 .postThumbImage {
   margin: 0;
   display: block;
+  width: 50px;
 }
 
 .postTitle {
@@ -54,7 +55,7 @@
 
 .postAuthor {
   display: flex;
-  margin-top: 2px;
+  // margin-top: 2px;
 }
 
 .postAuthor > span {
@@ -85,10 +86,10 @@
 }
 
 .postDescript {
-  margin-top: 10px !important;
-  margin-bottom: 10px !important;
+   // margin-top: 10px !important;
+  // margin-bottom: 10px !important;
   // font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   font-style: italic;
   overflow: hidden;
   text-overflow: ellipsis;

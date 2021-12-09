@@ -20,7 +20,7 @@ function Question({ question }) {
                 <img
                   src={question.author.avatarUrl}
                   alt="iconQuestion"
-                  style={{ width: "40px", borderRadius: "50%" }}
+                  style={{ width: "65px", borderRadius: "50%", border: 'solid' }}
                 />
               </figure>
             </a>
