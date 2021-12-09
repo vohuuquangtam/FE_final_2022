@@ -42,7 +42,13 @@ const Post = ({ post }) => {
               </span>
               </div>
           <div className={styles.postThumb}>
-
+          <figure className={styles.postThumbImage} style={{paddingRight: '10px', display: 'flex', justifyContent: 'end', marginTop: '5px'}}>
+              <img
+                src={"/static/iconBlog.png"}
+                alt="iconBlog"
+                style={{ width: "30px" }}
+              />
+            </figure>
             {user && user.id && post.author.id === user.id ? (
               <>
                 {/* <div style={{ display: 'flex', justifyContent: 'center'}}>
@@ -65,7 +71,7 @@ const Post = ({ post }) => {
                 <Dropdown
                   pointing="top right"
                   icon={null}
-                  trigger={<i class="fas fa-cog"></i>}
+                  trigger={<i class="fas fa-ellipsis-h"></i>}
                 >
                   <Dropdown.Menu>
                     <Dropdown.Item>
@@ -89,13 +95,7 @@ const Post = ({ post }) => {
             ) : (
               ""
             )}
-            <figure className={styles.postThumbImage} style={{paddingRight: '10px', display: 'flex', justifyContent: 'end', marginTop: '5px'}}>
-              <img
-                src={"/static/iconBlog.png"}
-                alt="iconBlog"
-                style={{ width: "30px" }}
-              />
-            </figure>
+       
           </div>
         </div>
         <div className={styles.postImage}>
@@ -121,7 +121,7 @@ const Post = ({ post }) => {
                   return (
                     <button className={styles.faTagButton} key={idex}>
                       <Link href={`/posts/tag-post/${tag.id}`}>
-                        <a><i className="fa fa-tag" style={{color: '#4183c4', fontSize: '16px', marginRight: '6px' }}></i>{tag.name}</a>
+                      <a><i className="fa fa-tag" style={{color: '#8860d0', fontSize: '16px', marginRight: '6px' }}></i>{tag.name}</a>
                       </Link>
                     </button>
                   );
@@ -146,12 +146,12 @@ const Post = ({ post }) => {
                 tabIndex="0"
               >
                 <Link href={`posts/${post.id}`}>
-                  <a className="ui basic blue right pointing label">
+                <a className="ui basic purple right pointing label">
                     {post.comments.length} comment
                     {post.comments.length > 1 ? "s" : ""}
                   </a>
                 </Link>
-                <div className="ui blue icon tiny button">
+                <div className="ui purple icon tiny button">
                   <i className="external comment large icon" style={{ fontSize: '1em'}}></i>
                 </div>
               </div>

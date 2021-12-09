@@ -1,5 +1,5 @@
 .cardTrainersLefHeader{
-/* border-left: 3px solid #4183c4; */
+/* border-left: 3px solid #8860d0; */
 	padding-left: 5px;
 }
 .cardTrainersLeftDetail {
@@ -19,7 +19,7 @@
 }
 
 .cardTrainerPageButtonTop {
-  background-color: #4183c4;
+  background-color: #8860d0;
   border-radius: 10px;
   border: none;
   color: #ffffff;

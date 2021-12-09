@@ -87,20 +87,20 @@ export default function CardLessonLeft({ classe, lessons }) {
                     >
                       <Icon name="dropdown" />
                       <span
-                          style={{ textTransform: "uppercase", color: "#4183c4" }}
+                         style={{ textTransform: "uppercase", color: "#8860d0" }}
                       >
                         {lesson.name}
                       </span>
                     </Accordion.Title>
                     <Accordion.Content active={activeIndex.includes(id)}>
                       <p>
-                        <span style={{ fontWeight: "bold", color: "#FF6D34" }}>
+                      <span style={{ fontWeight: "bold", color: "#2e9cca" }}>
                           Duration
                         </span>
                         : {lesson.duration} minutes
                       </p>
                       <p>
-                        <span style={{ fontWeight: "bold", color: "#FF6D34" }}>
+                      <span style={{ fontWeight: "bold", color: "#2e9cca" }}>
                           Time start
                         </span>
                         : {moment(lesson.startTime).format("lll")}

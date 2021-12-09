@@ -59,7 +59,7 @@
 }
 
 .postAuthor > span {
-  color: #4183c4;
+  color: #8860d0;
 }
 
 .postAuthor > p {
@@ -105,7 +105,7 @@
   background-color: transparent;
   border: none;
   box-shadow: none;
-  color: #4183c4;
+  color: #8860d0;
   font-family: inherit;
   font-size: 15px;
 }
@@ -198,7 +198,7 @@
 }
 
 .postDetailTime3 {
-  color: #686868;
+  color: #5680e9;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -221,6 +221,9 @@
   position: relative;
   transition: 0.3s;
   margin-bottom: 10px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
   .blogPostWrapper {
     border: none;
     display: flex;
@@ -334,7 +337,7 @@
     font-size: 12;
     font-style: italic;
     &:hover{
-      color: #4183c4 !important;
+      color: #8860d0 !important;
     }
   }
 }

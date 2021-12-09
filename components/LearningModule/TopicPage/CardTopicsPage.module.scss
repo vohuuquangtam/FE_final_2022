@@ -71,7 +71,7 @@
 }
 
 .cardTopicsLeftButton {
-  background: #e63946;
+  background: #3aafa9;
   border-radius: 30px;
   border: none;
   color: #ffffff;
@@ -80,12 +80,12 @@
   padding: 12px 20px;
   &:hover {
     cursor: pointer;
-    background: #f8293a;
+    background: #2b7a78;
   }
 }
 
 .cardCreateTopicsLeftButton {
-  background: #4183c4;
+  background: #8860d0;
   border-radius: 30px;
   border: none;
   color: #ffffff;
@@ -93,7 +93,7 @@
   padding: 12px 20px;
   &:hover {
     cursor: pointer;
-    background: #4183c4;
+    background: #8860d0;
   }
 }
 
@@ -134,7 +134,7 @@
           font-size: 15px;
           font-weight: 700;
           text-transform: uppercase;
-          color: #ff6d34;
+          color: #2e9cca;
         }
       }
     }
@@ -160,7 +160,7 @@
         font-size: 15px;
         font-weight: 700;
         text-transform: uppercase;
-        color: #ff6d34;
+        color: #2e9cca;
       }
     }
   }
@@ -188,7 +188,7 @@
   background: #f8f8f8;
   box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.14);
   .title {
-    background-color: #4183c4;
+    background-color: #8860d0;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
     padding: 20px 15px;
@@ -227,12 +227,12 @@
     font-size: 16px;
     line-height: 1;
     color: #ffffff;
-    background-color: #ff6d34;
+    background-color: #2e9cca;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     &:hover {
       cursor: pointer;
-      background-color: #4183c4;
+      background-color: #8860d0;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
     }
