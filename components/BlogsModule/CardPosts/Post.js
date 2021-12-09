@@ -19,7 +19,7 @@ const Post = ({ post }) => {
                   <img
                     src={post.author.avatarUrl}
                     alt="iconAuthor"
-                    style={{ width: "50px", borderRadius: "50%", border: "solid" }}
+                    style={{ width: "100%", borderRadius: "50%", border: "solid" }}
                   />
                 </figure>
               </a>
