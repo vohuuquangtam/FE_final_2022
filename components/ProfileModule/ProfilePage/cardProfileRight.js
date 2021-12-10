@@ -8,6 +8,7 @@ import ClassJoined from "../../LearningModule/CardClasses/ClassJoined";
 import ScheduleTrainer from "../Schedule/ScheduleTrainer";
 import ScheduleTrainee from "../Schedule/ScheduleTrainee";
 import styles from "./CardProfile.module.scss";
+import moment from "moment";
 
 const CardProfileRight = ({ userAcc, classes }) => {
   const { user } = useAuth();
@@ -59,6 +60,7 @@ const CardProfileRight = ({ userAcc, classes }) => {
                         </Link>
                         <List.Description className={styles.ListDescription}>
                           {post.subTitle}
+                          <p style={{ fontSize: '12px', fontStyle: 'italic', paddingTop: '4px'}}>published {moment(post.createdAt).format("ll")}</p>
                         </List.Description>
                       </List.Header>
                     </List.Item>
@@ -112,6 +114,9 @@ const CardProfileRight = ({ userAcc, classes }) => {
                         <Link href={`/questions/${question.id}`}>
                           <a>{question.title}</a>
                         </Link>
+                             {/* <Link.Description>
+                          <p style={{ fontSize: '12px', fontStyle: 'italic', paddingTop: '4px'}}>published {moment(question.createdAt).format("ll")}</p>
+                        </Link.Description> */}
                       </List.Header>
                     </List.Item>
                   );
