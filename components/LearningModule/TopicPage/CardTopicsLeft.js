@@ -13,6 +13,7 @@ export default function CardTopicsLeft({ topics }) {
       <div className={styles.cardTopicsLeftJoined}>
         <CardTopicsJoined />
       </div> */}
+        <h2 style={{margin:  '20px 0px', textAlign: 'center'}}>All Topics</h2>
       {user && user.roles.indexOf("TRAINER") !== -1 ? (
         <div style={{margin: '10px 0'}}>
           <CreateTopic />
@@ -22,7 +23,7 @@ export default function CardTopicsLeft({ topics }) {
         ""
       )}
 
-      <h3 style={{margin:  '20px 0px'}}>All Topics</h3>
+    
       <div className={styles.cardAllTopics}>
         {topics.map((topic, id) => {
           return <Topic topic={topic} key={id} />;

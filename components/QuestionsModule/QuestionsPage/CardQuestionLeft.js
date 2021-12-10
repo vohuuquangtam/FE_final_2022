@@ -20,8 +20,8 @@ function CardQuestionLeft({ tagQuestions }) {
           return <CardTagQuestion tagQuestion={tagQuestion} key={id} />;
         })}
       </div>
-      <p>
-        <Link href="/questions/tag-question"> See more tags </Link>
+      <p style={{ marginLeft: "8px"}}>
+        <Link href="/questions/tag-question"> See more tags... </Link>
       </p>
     </div>
   );
