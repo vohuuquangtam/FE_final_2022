@@ -11,6 +11,9 @@ import Client from "../../services/Client";
 import SearchTrainer from "../SearchModule/SearchTrainer";
 import CardTrainerPage from "./CardTrainerPage/CardTrainerPage";
 import styles from "./CardTrainers.module.css";
+import Head from "next/head";
+import Slider from "react-slick";
+import Link from "next/link";
 
 function CardTrainersLeft({ users }) {
   const breakPoints = [{ width: 200, itemsToShow: 3 }];
@@ -41,8 +44,47 @@ function CardTrainersLeft({ users }) {
     }
   };
 
+  var imgList = [
+    "/static/back-trainer-1.jpg",
+    "/static/back-trainer-3.jpg",
+    "/static/back-trainer-4.jpg",
+  ]
+
+  const caroselComponents = () => {
+    return imgList.map((item, id) => {
+          return (
+            <img src={item} width="100%" />
+          );
+    });
+  };
+  var settingsCarosels = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    pauseOnDotsHover: true,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    autoplay: true,
+    accessibility: false
+  };
+
   return (
-    <>
+    <React.Fragment>
+    <Head>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        charset="UTF-8"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+      />
+    </Head>
       <div
         style={{
           display: "flex",
@@ -50,7 +92,7 @@ function CardTrainersLeft({ users }) {
           justifyContent: "space-between",
         }}
       >
-        <h3 className={styles.cardTrainersLefHeader}>All Trainers</h3>
+        <h1 className={styles.cardTrainersLefHeader}>All Trainers</h1>
         <SearchTrainer />
         {user && user.roles.indexOf("TRAINER") !== -1 ? (
           ""
@@ -93,13 +135,30 @@ function CardTrainersLeft({ users }) {
         )}
       </div>
 
+      <div className={styles.caroselImg}>
+      <div style={{ width: '100%' }}>
+          <Slider {...settingsCarosels}>
+              {caroselComponents()}
+          </Slider>
+        </div>
+        <div style={{position: "absolute", top: "36%", left: "10%"}}>
+          <h1 style={{textAlign: 'left', color: '#fff', fontSize: "40px"}}>
+            <span>Find a Trainer</span> <br/> & Choose a Class Today.
+          </h1>
+          <button className={styles.cardTrainerPageButtonChoose} color="teal">
+            <Link href="/classes">
+              <a>Choose A Class</a>
+            </Link>
+          </button>      
+        </div>
+      </div>
       <div className={styles.cardTrainersLeftDetail}>
         {users.map((user, id) => {
           return <CardTrainerPage user={user} key={id} />;
         })}
       </div>
       <NotificationContainer />
-    </>
+      </React.Fragment>
   );
 }
 

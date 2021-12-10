@@ -43,14 +43,14 @@
 }
 
 .topTrainerCardContainer .round {
-  border: 1px solid #5680e9;
+  border: 3px solid #5680e9;
   border-radius: 50%;
   padding: 5px;
   height: 90px;
   width: 90px;
   position: absolute;
   left: 34%;
-  top: 23%;
+  top: 26%;
   z-index: 30;
   background-color: #edf1f6;
 }

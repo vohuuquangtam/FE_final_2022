@@ -8,12 +8,12 @@ export default class TrainerPage extends Component {
     return (
       <div>
         <div className={styles.trainerPage}>
-          <div style={{ width: "70%" }}>
+        <div style={{ width: "90%" }}>
             <CardTrainersLeft {...this.props} />
           </div>
-          <div style={{ width: "30%", marginLeft: "10px" }}>
+           {/* <div style={{ width: "30%", marginLeft: "10px" }}>
             <CardTrainersRight {...this.props} />
-          </div>
+            </div> */}
         </div>
       </div>
     );

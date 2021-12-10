@@ -83,3 +83,14 @@
 .cardTrainerPageButtonChoose a{
   color: #ffffff !important;
 }
+
+.caroselImg {
+  background-color: transparent;
+  /* box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75); */
+  border-radius: 8px;
+   /* padding: 10px; */
+  margin: 10px 0;
+  position: relative;
+  height: 395px;
+  overflow: hidden;
+}
