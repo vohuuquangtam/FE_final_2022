@@ -101,13 +101,16 @@ function Navbar() {
       </Head>
       <nav className="NavbarItems row">
         <Link href="/">
-          <img
-            className="navbarLogo"
-            src="/static/logo.png"
-            alt="logo"
-            width="60px"
-            height="auto"
-          />
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <img
+              className="navbarLogo"
+              src="/static/logo.png"
+              alt="logo"
+              width="60px"
+              height="auto"
+            />
+            <h4 style={{ color: "#FFF", paddingLeft: "8px" }}>E-LEARNING</h4>
+          </div>
         </Link>
         <div className="menuIcon" onClick={handleClick}>
           <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
