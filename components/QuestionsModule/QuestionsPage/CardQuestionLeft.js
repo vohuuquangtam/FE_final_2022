@@ -8,10 +8,12 @@ import CreateQuestion from "./CreateQuestion";
 function CardQuestionLeft({ tagQuestions }) {
   return (
     <div className={styles.cardQuestionLeft}>
-      <CreateQuestion />
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center'}}>
+        <CreateQuestion />
+      </div>
       <div className={styles.cardQuestionTag}>
         <i className="fa fa-tag"></i>
-        <span>Tag</span>
+        <span>List of tags</span>
       </div>
       <div className={styles.cardQuestionTagDetail}>
         {tagQuestions.slice(0,10).map((tagQuestion, id) => {

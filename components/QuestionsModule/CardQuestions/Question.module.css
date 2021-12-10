@@ -313,6 +313,7 @@
   color: #8860d0;
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .hotQuesDetail::after {
