@@ -20,6 +20,7 @@
     "@fullcalendar/list": "^5.4.0",
     "@fullcalendar/react": "^5.3.1",
     "@fullcalendar/timegrid": "^5.3.1",
+    "@madzadev/image-slider": "^1.0.8",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.20.0",
@@ -44,8 +45,10 @@
     "react-markdown-editor-lite": "^1.2.2",
     "react-notifications": "^1.7.2",
     "sass": "^1.28.0",
+    "react-slick": "^0.28.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.0",
     "url-loader": "^4.1.1",
     "window": "^4.2.7"

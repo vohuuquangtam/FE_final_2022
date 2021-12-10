@@ -13,9 +13,9 @@
 }
 .homeGrid{
   justify-content: center;
-  display: grid;
+ /* display: grid; */
  /* grid-template-columns: repeat(3, 1fr); */
-  grid-gap: 1em;
+   /* grid-gap: 1em; */
 }
 
 /* QUESTION PAGE */
@@ -35,4 +35,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1em;
+}
+
+.slick-prev::before, .slick-next::before{
+  color: #8860d0!important;
 }

@@ -1,3 +1,13 @@
+.postCardContainer {
+  display: flex;
+  height: auto;
+  margin: 0 0 10px 0;
+  min-width: 0;
+  position: relative;
+  width: 100%;
+  padding: 0 5px;
+}
+
 .postCard {
   background-color: #FFF;
   border-radius: 10px;
