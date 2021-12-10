@@ -24,7 +24,13 @@ export default function CardClassesLeft({classes}) {
       ) : (
         ""
       )}
-      <h3 style={{margin:  '20px 0px'}}>All Classes</h3>
+ 
+ <div  style={{ position: "relative", overflow: "hidden", boxShadow: "0px 1px 15px 0px rgba(51, 51, 51, 0.2);"}}>
+        <div className={styles.titleClass}>
+          <h2 style={{margin:  '20px 0px'}}>All Classes</h2>
+        </div>
+        <img className={styles.imageClass} src="/static/back-class.png" style={{ borderRadius: "8px"}} width="100%" />
+      </div>
       <div className={styles.cardAllClass}>
         {classes.map((classe, id) => {
           return <Classe classe={classe} key={id} />
