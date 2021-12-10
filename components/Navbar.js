@@ -112,9 +112,7 @@ function Navbar() {
         <div className="menuIcon" onClick={handleClick}>
           <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
-        <div className="navSearch">
-          <SearchBar />
-        </div>
+        
         <ul className={clicked ? "navMenu active" : "navMenu"}>
           <li className={router.pathname == "/" ? "actived" : ""}>
             <Link href="/">
@@ -164,7 +162,10 @@ function Navbar() {
             </>
           )}
         </ul>
-        {user ? userLink : loginRegLink}
+        <div className="navSearch" style={{display: 'flex', justifyContent: 'center'}}>
+          <SearchBar />
+          {user ? userLink : loginRegLink}
+        </div>
       </nav>
     </>
   );

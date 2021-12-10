@@ -29,7 +29,7 @@ function SearchBar() {
 
   return (
     <div>
-      <Form size="small" onSubmit={searchApi}>
+      <Form size="small" onSubmit={searchApi} style={{ paddingTop: "3px", paddingRight: "8px"}}>
         <Form.Group style={{ margin: "0px" }}>
           <div style={{ width: "250px", position: "relative" }}>
             <FormInput
