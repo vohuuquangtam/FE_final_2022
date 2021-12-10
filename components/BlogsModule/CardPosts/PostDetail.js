@@ -56,7 +56,7 @@ const PostDetail = ({ post }) => {
             <img
               src={post.featuredImage}
               alt="imageBlog"
-              style={{ width: "100%" }}
+              style={{ width: "90%" }}
             />
           </div>
           <ReactMarkdown>{post.content}</ReactMarkdown>

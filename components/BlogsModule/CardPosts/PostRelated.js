@@ -83,7 +83,7 @@ function PostRelated(props) {
                       </div>
                     </div>
                   </div>
-                  <div style={{ borderBottom: 'solid 1px #c9c9c9', margin: '10px 15px' }}></div>
+                
                 </>
                 ))}
                 </div>

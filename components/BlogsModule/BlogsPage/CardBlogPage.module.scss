@@ -26,13 +26,16 @@
 
 .cardBlogRightDetail {
   margin-top: 30px;
+  position: sticky;
+  top: 65px;
 }
 
 .ourTeam {
   box-shadow: 0px 1px 15px 0px rgba(51, 51, 51, 0.2);
   padding: 30px 0 30px;
   margin-bottom: 20px;
-  background-color: #f7f5ec;
+  background-color: #fff;
+  // background-color: #f7f5ec;
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -89,7 +92,8 @@
 }
 
 .ourTeam:hover .picture img {
-  box-shadow: 0 0 0 14px #f7f5ec;
+  box-shadow: 0 0 0 14px #fff;
+  // box-shadow: 0 0 0 14px #f7f5ec;
   transform: scale(0.7);
 }
 
@@ -137,7 +141,8 @@
 .ourTeam .social .button:hover {
   cursor: pointer;
   color: #8860d0 !important;
-  background-color: #f7f5ec;
+  background-color: #fff;
+  // background-color: #f7f5ec;
 }
 
 .teamContent h3 {

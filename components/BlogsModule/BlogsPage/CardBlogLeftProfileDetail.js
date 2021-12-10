@@ -1,12 +1,11 @@
 import Link from "next/link";
 import React from "react";
-import PostRelated from "../CardPosts/PostRelated";
 import styles from "./CardBlogPage.module.scss";
 
-export default function CardBlogRightDetail({ post }) {
+export default function CardBlogLeftProfileDetail({ post }) {
   return (
     <div className={styles.cardBlogRightDetail}>
-       {/* <div className={styles.ourTeam}>
+      <div className={styles.ourTeam}>
         <div className={styles.picture}>
           <img className="img-fluid" src={post.author.avatarUrl} />
         </div>
@@ -20,8 +19,8 @@ export default function CardBlogRightDetail({ post }) {
             </Link>
           </button>
         </div>
-       </div> */}
-      <PostRelated />
+      </div>
+      {/* <PostRelated /> */}
     </div>
   );
 }
