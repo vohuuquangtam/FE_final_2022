@@ -203,6 +203,17 @@
   }
 }
 
+
+
+
+.cardTopic {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.14);
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
 /* CARD LESSON RIGHT */
 
 .wglCourseEssentials {
@@ -266,3 +277,6 @@
 }
 
 
+.newestTopicCard {
+  padding: 10px;
+}
