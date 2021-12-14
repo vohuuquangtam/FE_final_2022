@@ -13,27 +13,21 @@ function Home({ home, classes }) {
  
   const renderComponents = () => {
     return home.map((item, id) => {
-      const min = 1;
-      const max = 100;
-      const rand = min + Math.random() * (max - min);
       switch (item.type) {
         case "post":
-          return <Post post={item} key={id + rand} />;
+          return <Post post={item} key={id} />;
         case "question":
-          return <Question question={item} key={id + rand} />;
+          return <Question question={item} key={id} />;
       }
     });
   };
   const homeComponents = () => {
     return home.map((item, id) => {
-      const min = 1;
-      const max = 100;
-      const rand = min + Math.random() * (max - min);
       switch (item.type) {
         case "post":
           return (
-            <div style={{padding: '0 10px', maxWidth: '25%'}}>
-           <Post post={item} key={id + rand} />
+            <div style={{padding: '0 10px', maxWidth: '25%'}} key={id}>
+            <Post post={item} />
             </div>
           );
       }
@@ -42,12 +36,9 @@ function Home({ home, classes }) {
 
   const questionComponents = () => {
     return home.map((item, id) => {
-      const min = 1;
-      const max = 100;
-      const rand = min + Math.random() * (max - min);
       switch (item.type) {
         case "question":
-          return <Question question={item} key={id + rand} />;
+          return <Question question={item} key={id} />;
       }
     });
   };
@@ -108,12 +99,9 @@ function Home({ home, classes }) {
             <div style={{ marginTop: "20px",width: '100%' }}>
               <Slider {...settingsCarosels}>
                 {classes.slice(0,10).map((classe, id) => {
-                    const min = 1;
-                    const max = 100;
-                    const rand = min + Math.random() * (max - min);
                   return (
-                      <div style={{padding: '0 10px'}}>
-                <Classe classe={classe} key={id + rand} />
+                    <div style={{padding: '0 10px'}} key={id}>
+                        <Classe classe={classe} />
                       </div>
                   );
                 })}
