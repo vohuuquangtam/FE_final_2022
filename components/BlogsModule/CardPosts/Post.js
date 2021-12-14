@@ -72,7 +72,7 @@ const Post = ({ post }) => {
                   <Dropdown
                     pointing="top right"
                     icon={null}
-                    trigger={<i class="fas fa-ellipsis-h"></i>}
+                    trigger={<i className="fas fa-ellipsis-h"></i>}
                   >
                     <Dropdown.Menu>
                       <Dropdown.Item>
