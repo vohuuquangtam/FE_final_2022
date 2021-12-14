@@ -60,7 +60,7 @@ const CardProfileRight = ({ userAcc, classes }) => {
                         </Link>
                         <List.Description className={styles.ListDescription}>
                           {post.subTitle}
-                          <p style={{ fontSize: '12px', fontStyle: 'italic', paddingTop: '4px'}}>published {moment(post.createdAt).format("ll")}</p>
+                           {/*<p style={{ fontSize: '12px', fontStyle: 'italic', paddingTop: '4px'}}>published {moment(post.createdAt).format("ll")}</p>*/}
                         </List.Description>
                       </List.Header>
                     </List.Item>

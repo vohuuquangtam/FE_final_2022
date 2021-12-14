@@ -13,7 +13,7 @@ function CardBlogLeft({posts}) {
           <CreateBlog />
         </div>
         <div style={{ position: "relative", overflow: "hidden", background: "transparent", marginBottom: "10px"}}>
-          <img className={styles.imageClass} src="/static/back-blog.jpg" width="100%"/>
+        <img className={styles.imageClass} src="/static/back-blog.jpg" style={{width: "100%"}} />
         </div>
         <div className={styles.cardBlogLeftMap}>
             {posts.map((post, id) => {

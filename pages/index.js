@@ -11,24 +11,29 @@ import Head from "next/head";
 function Home({ home, classes }) {
   const { user } = useAuth();
  
-  console.log("home",home);
   const renderComponents = () => {
     return home.map((item, id) => {
+      const min = 1;
+      const max = 100;
+      const rand = min + Math.random() * (max - min);
       switch (item.type) {
         case "post":
-          return <Post post={item} key={id} />;
+          return <Post post={item} key={id + rand} />;
         case "question":
-          return <Question question={item} key={id} />;
+          return <Question question={item} key={id + rand} />;
       }
     });
   };
   const homeComponents = () => {
     return home.map((item, id) => {
+      const min = 1;
+      const max = 100;
+      const rand = min + Math.random() * (max - min);
       switch (item.type) {
         case "post":
           return (
             <div style={{padding: '0 10px', maxWidth: '25%'}}>
-              <Post post={item} key={id} />
+           <Post post={item} key={id + rand} />
             </div>
           );
       }
@@ -37,9 +42,12 @@ function Home({ home, classes }) {
 
   const questionComponents = () => {
     return home.map((item, id) => {
+      const min = 1;
+      const max = 100;
+      const rand = min + Math.random() * (max - min);
       switch (item.type) {
         case "question":
-          return <Question question={item} key={id} />;
+          return <Question question={item} key={id + rand} />;
       }
     });
   };
@@ -100,9 +108,12 @@ function Home({ home, classes }) {
             <div style={{ marginTop: "20px",width: '100%' }}>
               <Slider {...settingsCarosels}>
                 {classes.slice(0,10).map((classe, id) => {
+                    const min = 1;
+                    const max = 100;
+                    const rand = min + Math.random() * (max - min);
                   return (
                       <div style={{padding: '0 10px'}}>
-                        <Classe classe={classe} key={id} />
+                <Classe classe={classe} key={id + rand} />
                       </div>
                   );
                 })}

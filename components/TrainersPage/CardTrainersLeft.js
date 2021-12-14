@@ -53,7 +53,7 @@ function CardTrainersLeft({ users }) {
   const caroselComponents = () => {
     return imgList.map((item, id) => {
           return (
-            <img src={item} width="100%" />
+            <img src={item} width="100%" key={id}/>
           );
     });
   };
