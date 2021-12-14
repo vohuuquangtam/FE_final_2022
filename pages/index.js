@@ -26,7 +26,7 @@ function Home({ home, classes }) {
       switch (item.type) {
         case "post":
           return (
-            <div style={{padding: '0 10px', maxWidth: '25%'}} key={id}>
+            <div style={{padding: '0 10px', width: '50%'}} key={id}>
             <Post post={item} />
             </div>
           );
@@ -60,6 +60,7 @@ function Home({ home, classes }) {
     dots: true,
     infinite: true,
     speed: 500,
+    slidesToShow: 2,
     slidesToScroll: 1,
     pauseOnDotsHover: true,
     pauseOnFocus: true,

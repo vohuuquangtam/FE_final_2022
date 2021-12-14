@@ -133,8 +133,11 @@
   outline: none;
 }
 
-.faTag i {
-  margin-right: 5px;
+.faTag { 
+  min-height: 30px;
+  i {
+    margin-right: 5px;
+  }
 }
 
 .faTagButton {
