@@ -77,3 +77,7 @@
   margin-left:-10px;
   margin-top:-10px;
 }
+
+.fixWidth {
+  width: 100%!important;
+}

@@ -93,7 +93,7 @@ function Home({ home, classes }) {
         <div style={{display: "flex"}}>
           <div
             style={{ width: "70%", paddingTop: "5px" }}
-            className={`${styles.container} ${styles.homeGrid}`}
+            className={`${styles.container} ${styles.homeGrid} ${!user ? styles.fixWidth : null}`}
           >
             <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "20px" }}>
               <h1 style={{textAlign: 'center'}}>Blogs</h1>
@@ -138,7 +138,7 @@ function Home({ home, classes }) {
             </div> */}
           </div>
         </div>
-        <div style={{ padding: "10px", marginTop: "60px", width: '30%'  }}>
+        <div style={{ width: '100%' }}>
             <div style={{ width: '100%', position: 'sticky', top: '68px' }}>
               {user && <ScheduleTrainer user={user} />}
           </div>

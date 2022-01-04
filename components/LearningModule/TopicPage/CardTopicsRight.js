@@ -6,7 +6,7 @@ import ScheduleTrainer from '../../ProfileModule/Schedule/ScheduleTrainer'
 export default function CardTopicsRight() {
   const {user} = useAuth();
   return (
-    <div style={{ position: "sticky", top: "90px"}}>
+    <div>
       {user && <ScheduleTrainer user={user} />}
     </div>
   )
