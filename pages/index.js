@@ -83,6 +83,13 @@ function Home({ home, classes }) {
       />
     </Head>
     <div style={{ width: "100%"}}  className={styles.container}>
+    <img
+              className={styles.leftAdvertisement}
+              src="/static/web-page-design-studying-online-260nw-1788665546.jpg"
+              alt="logo"
+              width="100px"
+              height="auto"
+            />
         <div style={{display: "flex"}}>
           <div
             style={{ width: "70%", paddingTop: "5px" }}
@@ -136,6 +143,13 @@ function Home({ home, classes }) {
               {user && <ScheduleTrainer user={user} />}
           </div>
       </div>
+    <img
+              className={styles.rightAdvertisement}
+              src="/static/web-page-design-studying-online-260nw-1788665546.jpg"
+              alt="logo"
+              width="100px"
+              height="auto"
+            />
     </div>
     </React.Fragment>
   );
