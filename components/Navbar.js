@@ -106,7 +106,7 @@ function Navbar() {
               className="navbarLogo"
               src="/static/logo.png"
               alt="logo"
-              width="60px"
+              width="40px"
               height="auto"
             />
             <h4 style={{ color: "#FFF", paddingLeft: "8px" }}>E-LEARNING</h4>
