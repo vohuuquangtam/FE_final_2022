@@ -19,9 +19,9 @@ const CardProfileSetting = ({ userAcc }) => {
   const [username, setUsername] = useState(userAcc.username);
   const [phoneNumber, setPhoneNumber] = useState(userAcc.phoneNumber || "");
   const [avatarUrl, setAvatarUrl] = useState(userAcc.avatarUrl);
-  const [password, setPassword] = useState();
-  const [oldPassword, setOldPassword] = useState();
-
+  let password;
+  let oldPassword;
+  let repeatPassword;
   useEffect(() => {
     if (user) setEmail(user.email);
     if (user) setPhoneNumber(user.phoneNumber);
@@ -34,9 +34,15 @@ const CardProfileSetting = ({ userAcc }) => {
       name,
       phoneNumber,
       avatarUrl,
+      password
     };
     console.log("l39", updateUser);
-    if (password) updateUser.password = password;
+    if (password === repeatPassword) {
+      if (password) updateUser.password = password;
+      if (oldPassword) updateUser.oldPassword = oldPassword;
+    } else {
+      alert("Repeat Password not correct");
+    }
     Client(`user/${userAcc.id}`, "PATCH", updateUser) 
       .then(({ data }) => {
         console.log("l43", data);
@@ -50,6 +56,10 @@ const CardProfileSetting = ({ userAcc }) => {
   const handleInputChange = async (e) => {
     setName(e.target.value);
   };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  }
 
   const renderPanes = async () => {
     return [
@@ -115,19 +125,30 @@ const CardProfileSetting = ({ userAcc }) => {
           content: "Change Password",
         },
         render: () => (
-          <Tab.Pane attached={false}>
+          <Tab.Pane attached={false} onSubmit={handleSubmit(Update)}>
             <Form>
               <Form.Field required>
                 <label>Old Password</label>
-                <Form.Input placeholder="old pass" required />
+                <Form.Input placeholder="old pass" required value={oldPassword} onChange={(e) => {
+                  oldPassword = e.target.value;
+                  }} />
               </Form.Field>
               <Form.Field required>
                 <label>New Password</label>
-                <Form.Input placeholder="new pass" required />
+                <Form.Input
+                      required
+                      value={password}
+                      placeholder="new pass"
+                      type="text"
+                      name="password"
+                      onChange={e =>{password = e.target.value}}
+                    />
               </Form.Field>
               <Form.Field required>
               <label>Repeat New Password</label>
-                <Form.Input placeholder="repeat new pass" required />
+              <Form.Input placeholder="repeat new pass" required value={repeatPassword} onChange={(e) => {
+                  repeatPassword = e.target.value;
+                }}/>
               </Form.Field>
               <Button color="linkedin" type="submit">
                 Confirm
@@ -143,8 +164,8 @@ const CardProfileSetting = ({ userAcc }) => {
 
   useEffect(() => {
     renderPanes().then((components) => setPanes(components));
-  }, [allowEdit, name, email, phoneNumber, avatarUrl]);
-
+  }, [allowEdit, name, email, phoneNumber, avatarUrl, password, oldPassword, repeatPassword]);
+  
   return <Tab menu={{ secondary: true }} panes={panes} />;
 };
 
