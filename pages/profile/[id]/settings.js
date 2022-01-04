@@ -5,7 +5,7 @@ import styles from '../../../styles/Home.module.css'
 
 function settings({userAcc, trainers}) {
   return (
-    <div className={styles.loginContainer}>
+    <div className={styles.settingContainer}>
       <ProfileSettingPage userAcc={userAcc} trainers={trainers} />
     </div>
   );

@@ -23,14 +23,14 @@
 .topTrainerButton .primary {
   border: 1px solid #03bfcb;
   border-radius: 5px;
-  color: #8860d0;
+  color: #50009d;
   font-weight: 500;
   padding: 5px 10px;
   background-color: transparent;
 }
 
 .topTrainerButton .primary:hover {
-  background-color: #8860d0;
+  background-color: #50009d;
   color: #fdc632;
   cursor: pointer;
 }

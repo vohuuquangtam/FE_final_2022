@@ -34,7 +34,7 @@ function PostPage({ post }) {
                 return (
                   <button className={styles.faTagButton} key={idex}>
                     <Link href={`/posts/tag-post/${tag.id}`}>
-                    <a><i className="fa fa-tag" style={{color: '#8860d0', fontSize: '16px', marginRight: '6px' }}></i>{tag.name}</a>
+                    <a><i className="fa fa-tag" style={{color: '#50009d', fontSize: '16px', marginRight: '6px' }}></i>{tag.name}</a>
                     </Link>
                   </button>
                 );

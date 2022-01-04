@@ -22,7 +22,7 @@ function CardProfileLeft({ userAcc, trainers }) {
             <Link href={`/profile/${userAcc.id}/settings`}>
               <a>
                 <Popup
-                  trigger={<i className="fas fa-cogs"></i>}
+                 trigger={<i className="fas fa-cogs" style={{color: "#fff"}}></i>}
                   content="Setting profile"
                   basic
                 />

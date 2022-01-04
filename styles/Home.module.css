@@ -12,6 +12,14 @@
   height: 100vh;
   background: url("/static/divi-gallery-hero-background.jpg");
 }
+
+.settingContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+  height: 100vh;
+}
+
 .homeGrid{
   justify-content: center;
  /* display: grid; */
@@ -39,5 +47,5 @@
 }
 
 .slick-prev::before, .slick-next::before{
-  color: #8860d0!important;
+  color: #50009d!important;
 }

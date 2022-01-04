@@ -8,7 +8,7 @@ function CardBlogLeft({posts}) {
     return (
       <div className={styles.cardBlogsLeft}>
         <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', marginBottom: '10px', width: '100%', position: 'absolute', top: '0', paddingTop: '10px', paddingBottom: '10px', borderRadius: '8px', backgroundColor: 'rgb(126 121 121 / 25%)', zIndex: '1'}}>
-          <h2 style={{ color: '#8860d0'}}>All Blogs</h2>
+        <h2 style={{ color: '#50009d'}}>All Blogs</h2>
           <SearchBlog />
           <CreateBlog />
         </div>

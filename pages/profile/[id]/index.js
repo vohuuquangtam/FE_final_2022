@@ -6,7 +6,7 @@ import styles from "../../../styles/Home.module.css";
 function profile({ userAcc, classes, trainers }) {
   console.log("userAcc", userAcc);
   return (
-    <div className={styles.loginContainer}>
+    <div className={styles.settingContainer}>
       <ProfilePage userAcc={userAcc} classes={classes} trainers={trainers}  />
     </div>
   );
