@@ -82,45 +82,58 @@ function Home({ home, classes }) {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
     </Head>
-    <div style={{display: "flex"}}>
-      <div
-        style={{ width: "70%" }}
-        className={`${styles.container} ${styles.homeGrid}`}
-      >
-        <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "20px" }}>
-          <h1 style={{textAlign: 'center'}}>Blogs</h1>
-          <div style={{ width: '100%' }}>
-            <Slider {...settingsCarosels2}>
-                {homeComponents()}
-            </Slider>
-          </div>
+    <div style={{ width: "100%"}}  className={styles.container}>
+        <div style={{display: "flex"}}>
+          <div
+            style={{ width: "70%", paddingTop: "5px" }}
+            className={`${styles.container} ${styles.homeGrid}`}
+          >
+            <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "20px" }}>
+              <h1 style={{textAlign: 'center'}}>Blogs</h1>
+              <div style={{ width: '100%' }}>
+                <Slider {...settingsCarosels2}>
+                    {homeComponents()}
+                </Slider>
+              </div>
           </div>
           <div style={{ width: "100%", paddingRight: "20px", paddingLeft: "20px", marginTop: "20px" }}>
-            <h1 style={{textAlign: 'center'}}>Classes</h1>
-            <div style={{ marginTop: "20px",width: '100%' }}>
-              <Slider {...settingsCarosels}>
-                {classes.slice(0,10).map((classe, id) => {
-                  return (
-                    <div style={{padding: '0 10px'}} key={id}>
-                        <Classe classe={classe} />
-                      </div>
-                  );
-                })}
-              </Slider>
-            </div>
-          </div>
-          <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "30px" }}>
-            <h1 style={{textAlign: 'center'}}>Questions</h1>
-            <div style={{display: "flex", justifyContent: "center"}}>
-              <div style={{ padding: "10px", width: '67%' }}>
-                {questionComponents()}
+              <h1 style={{textAlign: 'center'}}>Classes</h1>
+              <div style={{ marginTop: "20px",width: '100%' }}>
+                <Slider {...settingsCarosels}>
+                  {classes.slice(0,10).map((classe, id) => {
+                    return (
+                        <div style={{padding: '0 10px'}} key={id}>
+                          <Classe classe={classe} />
+                        </div>
+                    );
+                  })}
+                </Slider>
               </div>
             </div>
+            <div style={{ width: "100%", paddingLeft: "20px", paddingRight: "20px", marginTop: "30px" }}>
+              <h1 style={{textAlign: 'center'}}>Questions</h1>
+              <div style={{display: "flex", justifyContent: "center"}}>
+                <div style={{ padding: "10px", width: '67%' }}>
+                  {questionComponents()}
+                </div>
+              </div>
+            </div>
+              {/* <div style={{ width: "100%", paddingLeft: "20px", gridColumn: "1/3", marginTop: "10px" }}>
+              {renderComponents()}
+            </div>
+            <div style={{ width: "100%", paddingRight: "20px", marginTop: "20px" }}>
+              {user && <ScheduleTrainer user={user} />}
+              <div style={{ marginTop: "20px" }}>
+                {classes.slice(0,10).map((classe, id) => {
+                  return <Classe classe={classe} key={id} />;
+                })}
+              </div>
+            </div> */}
           </div>
         </div>
-        <div style={{ padding: "10px", marginTop: "120px", width: '30%'  }}>
-        <div style={{ width: '60%', position: 'sticky', top: '68px' }}>
-            {user && <ScheduleTrainer user={user} />}
+        <div style={{ padding: "10px", marginTop: "60px", width: '30%'  }}>
+            <div style={{ width: '100%', position: 'sticky', top: '68px' }}>
+              {user && <ScheduleTrainer user={user} />}
           </div>
       </div>
     </div>

@@ -64,15 +64,11 @@ export default function CardTopicsLeft({ topics }) {
           <div>
             <h3>Newest Topics</h3>
           </div>
-          <div>
+           {/* <div>
             <Slider {...settingsCarosels}>
                 {caroselComponents()}
-                {caroselComponents()}
-                {caroselComponents()}
-                {caroselComponents()}
-                {caroselComponents()}
             </Slider>
-          </div>
+           </div> */}
         </div>
         <div className={styles.cardAllTopics}>
           {topics.map((topic, id) => {

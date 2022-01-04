@@ -149,7 +149,7 @@ function SignUpPage() {
             />
           )}
           <div className={styles.loginButton}>
-            <Button type="submit" color={"linkedin"}>
+          <Button type="submit" color={"purple"} style={{ backgroundColor: "#50009d"}}>
               SIGN UP
             </Button>
             <LoginGithub />
