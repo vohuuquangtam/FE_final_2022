@@ -45,10 +45,10 @@ function LoginGithub() {
     }
   }
       return (
-        <Button color={"black"} onClick={loginWithGithub}>
+        <Button color={"red"} onClick={loginWithGithub}>
           <div className={styles.loginButtonSecond}>
-            <i className="fab fa-github"></i>
-            <p style={{ marginLeft: "10px" }}>Login with Github</p>
+          <i className="fab fa-google"></i>
+            <p style={{ marginLeft: "10px" }}>Login with Google</p>
           </div>
         </Button>
       );  

@@ -58,6 +58,7 @@ function LoginPage() {
             <Button
               type="submit"
               color={"linkedin"}
+              style={{ backgroundColor: "#8860d0"}}
             >
               LOGIN
             </Button>

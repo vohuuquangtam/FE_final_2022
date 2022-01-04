@@ -204,7 +204,7 @@ const CardProfileRight = ({ userAcc, classes }) => {
     renderPanes().then((components) => setPanes(components));
   }, [allowEdit]);
 
-  return <Tab menu={{ secondary: true }} panes={panes} />;
+  return <Tab  menu={{ color: 'purple', fluid: true,  tabular: true }} panes={panes} />;
 };
 
 export default CardProfileRight;
