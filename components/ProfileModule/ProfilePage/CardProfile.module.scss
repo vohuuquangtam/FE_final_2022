@@ -53,6 +53,21 @@ $shadow: 0 13px 26px rgba(#000, .2), 0 3px 6px rgba(#000, .2);
 			box-shadow: $shadow;
 			background-color: #fff;
 		}
+
+
+
+		.buttonAddAvatar {
+			background: #50009d;
+			border: none;
+			padding: 5px;
+			border-radius: 50%;
+			color: #fff;
+			cursor: pointer;
+			position: absolute;
+			right: 77px;
+			top: 101px;
+			height: 27px;
+		}
 		.name {
 			color: #2D354A;
 			font-size: 24px;

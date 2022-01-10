@@ -1,18 +1,56 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Popup } from "semantic-ui-react";
+import { Popup, Icon } from "semantic-ui-react";
 import { useAuth } from "../../../contexts/auth";
 import styles from "./CardProfile.module.scss";
+import Client from "../../../services/Client";
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
 
 function CardProfileLeft({ userAcc, trainers }) {
 
   console.log("usss", userAcc);
   const [email, setEmail] = useState(userAcc.email || "");
   const [phoneNumber, setPhoneNumber] = useState(userAcc.phoneNumber || "");
+    // const [avatar, setAvatar] = useState("");
   const { user } = useAuth();
   useEffect(() => {
     if (user) setEmail(user.email);
   }, [user]);
+
+  const setAvatar = async (item) => {
+    let formdata = new FormData();
+    let selectedFile = item.target.files[0];
+    // formdata.append("file", url);
+    formdata.append(
+      "file",
+      selectedFile,
+      selectedFile.name
+    );
+    const { data } = await Client(`upload`, "POST", formdata, "multipart/form-data");
+
+    if (data && data.url){
+      Update(data.url);
+    }
+  };
+
+  const Update = (url) => {
+    let updateUser = {
+      avatarUrl: url,
+    };
+    Client(`user/${userAcc.id}`, "PATCH", updateUser) 
+      .then(({ data }) => {
+        NotificationManager.success(
+          "Change avatar success",
+          "Success"
+        );
+        router.push(`/profile/${userAcc.id}`);
+      })
+      .catch((error) => {
+      });
+  };
 
   return (
     <div>
@@ -38,6 +76,16 @@ function CardProfileLeft({ userAcc, trainers }) {
             alt="avatar"
             className={styles.thumbnail}
           />
+            <div className={styles.buttonAddAvatar}>
+            <label for="file-input">
+              <Icon style={{ margin: "0", cursor: "pointer"}} name="plus" />
+            </label>
+
+            <input id="file-input" type="file" style={{ display: "none"}}  onChange={(e) => setAvatar(e)} 
+              onClick={(event)=> {
+                event.target.value = null }}/>
+          </div>
+          {/* <button className={styles.buttonAddAvatar}><Icon style={{margin: "0"}} name="plus" /></button> */}
           <h3 className={styles.name}>
             <Link href={`/profile/${userAcc.id}`}>
               <a>{userAcc.name}</a>
@@ -61,6 +109,7 @@ function CardProfileLeft({ userAcc, trainers }) {
           </div>
         </div>
       </div>
+      <NotificationContainer />
     </div>
   );
 }

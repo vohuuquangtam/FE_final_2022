@@ -5,9 +5,9 @@ function getToken() {
   return token;
 }
 
-function headerHelper() {
+function headerHelper(type = "application/json") {
   let header = {
-    "Content-Type": "application/json",
+    "Content-Type": type,
   };
   const token = getToken();
   if (token) header["Authorization"] = getToken();
