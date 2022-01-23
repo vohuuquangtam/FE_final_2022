@@ -186,6 +186,12 @@
       }
     }
   }
+
+
+  .buttonEdit {
+    padding: 0 20px;
+  }
+
   .courseThumbnail {
     width: 100%;
     margin-bottom: 20px;
@@ -204,6 +210,18 @@
 }
 
 
+.buttonAddAvatar {
+  background: #50009d;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-weight: 600;
+}
 
 
 .cardTopic {

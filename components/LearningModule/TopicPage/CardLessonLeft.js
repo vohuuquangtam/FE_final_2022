@@ -54,6 +54,37 @@ export default function CardLessonLeft({ classe, lessons }) {
     router.push(`/classes/${classe.id}`);
   };
 
+  const setAvatar = async (item) => {
+    let formdata = new FormData();
+    let selectedFile = item.target.files[0];
+    // formdata.append("file", url);
+    formdata.append(
+      "file",
+      selectedFile,
+      selectedFile.name
+    );
+    const { data } = await Client(`upload`, "POST", formdata, "multipart/form-data");
+
+    if (data && data.url){
+      Update(data.url);
+    }
+  };
+
+  const Update = (url) => {
+    let updateUser = classe;
+    updateUser.featuredImage = url;
+    Client(`classe/${classe.id}`, "PATCH", updateUser) 
+      .then(({ data }) => {
+        NotificationManager.success(
+          "Change thumbnail success",
+          "Success"
+        );
+        router.push(`/classes`);
+      })
+      .catch((error) => {
+      });
+  };
+
   const handleClick = (e, titleProps) => {
     const { index } = titleProps;
     const newIndex = activeIndex;
@@ -195,8 +226,18 @@ export default function CardLessonLeft({ classe, lessons }) {
             </span>
           </span>
         </div>
-        <div className={styles.courseThumbnail}>
+        <div className={styles.courseThumbnail} style={{position: 'relative'}}>
           <img src={classe.featuredImage} alt="lessonThumbnail" />
+          <div className={styles.buttonAddAvatar}>
+            <label for="file-input">
+              {/* <Icon style={{ margin: "0", cursor: "pointer"}} name="plus" /> */}
+              Change thumbnail
+            </label>
+
+            <input id="file-input" type="file" style={{ display: "none"}}  onChange={(e) => setAvatar(e)} 
+              onClick={(event)=> {
+                event.target.value = null }}/>
+          </div>
         </div>
         <div>
           <Tab
