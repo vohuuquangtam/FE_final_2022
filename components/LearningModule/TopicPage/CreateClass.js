@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Dropdown, Form, Modal } from "semantic-ui-react";
 import { useAuth } from "../../../contexts/auth";
 import Client from "../../../services/Client";
+import ThirdPartyClient from "../../../services/ThirdPartyClient";
 import DatePickerPage from "../../DatePicker";
 import styles from "./CardTopicsPage.module.scss";
 
@@ -17,6 +18,7 @@ function CreateClass(props) {
   const [duration, setDuration] = useState(0);
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
+  const [featuredvideo, setFeaturedVideo] = useState(null);
 
   const [options, setOptions] = useState([]);
   const [topic, setTopic] = useState("");
@@ -40,6 +42,22 @@ function CreateClass(props) {
     fetchData();
   }, []);
 
+  const setVideo = async (item) => {
+    let formdata = new FormData();
+    let selectedFile = item.target.files[0];
+    // formdata.append("file", url);
+    formdata.append(
+      "file",
+      selectedFile,
+      selectedFile.name
+    );
+    const { data } = await ThirdPartyClient(`files/upload`, "POST", formdata, "multipart/form-data");
+
+    if (data && data.fileDownloadUri){
+      setFeaturedVideo(data.fileDownloadUri);
+    }
+  };
+
   const Create = () => {
     if (!user)
       router.push(`/sign-in?forward=${encodeURIComponent(router.asPath)}`);
@@ -51,6 +69,7 @@ function CreateClass(props) {
         },
         description,
         featuredImage,
+        featuredvideo,
         duration: Number(duration),
         startTime: new Date(startTime).toISOString(),
         endTime: new Date(endTime).toISOString(),
@@ -128,6 +147,16 @@ function CreateClass(props) {
                 onChange={(e) => setFeaturedImage(e.target.value)}
               />
             </Form.Field>
+          </Form.Group>
+          <Form.Group widths="equal">
+            <Form.Field>
+                <label>Video</label>
+                <input id="file-input"
+                  type="file"
+                  placeholder="upload video"
+                  onChange={(e) => setVideo(e)}
+                />
+              </Form.Field>
           </Form.Group>
           <Form.Group widths="equal">
             <Form.Field>

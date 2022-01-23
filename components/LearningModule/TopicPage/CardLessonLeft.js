@@ -15,6 +15,7 @@ import {
 import { useAuth } from "../../../contexts/auth";
 import Client from "../../../services/Client";
 import DatePickerPage from "../../DatePicker";
+import { Player } from 'video-react';
 import styles from "./CardTopicsPage.module.scss";
 
 export default function CardLessonLeft({ classe, lessons }) {
@@ -179,6 +180,11 @@ export default function CardLessonLeft({ classe, lessons }) {
     renderPanes().then((components) => setPanes(components));
   }, []);
   return (
+    <React.Fragment>
+    <link
+      rel="stylesheet"
+      href="https://video-react.github.io/assets/video-react.css"
+    />
     <div className={styles.cardTopicsLeft}>
       <h3>
         <Link href="/classes">
@@ -193,113 +199,120 @@ export default function CardLessonLeft({ classe, lessons }) {
         <div className={styles.courseMeta}>
           <span className={styles.courseAuthor}>
             <Link href={`/profile/${classe.trainer.user.id}`}>
-              <a>
+                <a>
                 <img
-                  alt="Admin bar avatar"
-                  src={classe.trainer.user.avatarUrl}
-                  className="avatar avatar-96 photo"
-                  height="96"
-                  width="96"
-                />
-              </a>
-            </Link>
-            <span className={styles.authorData}>
-              <span className={styles.metaTitle}>Trainer</span>
-              <span className="meta_data">
-                <Link href={`/profile/${classe.trainer.user.id}`}>
-                  <a>{classe.trainer.user.name}</a>
+                    alt="Admin bar avatar"
+                    src={classe.trainer.user.avatarUrl}
+                    className="avatar avatar-96 photo"
+                    height="96"
+                    width="96"
+                  />
+                </a>
+              </Link>
+              <span className={styles.authorData}>
+                <span className={styles.metaTitle}>Trainer</span>
+                <span className="meta_data">
+                  <Link href={`/profile/${classe.trainer.user.id}`}>
+                    <a>{classe.trainer.user.name}</a>
+                  </Link>
+                </span>
+              </span>
+            </span>
+            <span className={styles.courseCategory}>
+              <i className="far fa-folder"></i>
+              <span className={styles.catData}>
+                <span className={styles.metaTitle}>Topic</span>
+                <Link href={`/topics/${classe.topic.id}/classes`}>
+                  <a>
+                    <span className="meta_data">
+                      <span className="cat-links">{classe.topic.name}</span>
+                    </span>
+                  </a>
                 </Link>
               </span>
             </span>
-          </span>
-          <span className={styles.courseCategory}>
-            <i className="far fa-folder"></i>
-            <span className={styles.catData}>
-              <span className={styles.metaTitle}>Topic</span>
-              <Link href={`/topics/${classe.topic.id}/classes`}>
-                <a>
-                  <span className="meta_data">
-                    <span className="cat-links">{classe.topic.name}</span>
-                  </span>
-                </a>
-              </Link>
-            </span>
-          </span>
-        </div>
-        <div className={styles.courseThumbnail} style={{position: 'relative'}}>
-          <img src={classe.featuredImage} alt="lessonThumbnail" />
-          <div className={styles.buttonAddAvatar}>
-            <label for="file-input">
-              {/* <Icon style={{ margin: "0", cursor: "pointer"}} name="plus" /> */}
-              Change thumbnail
-            </label>
-
-            <input id="file-input" type="file" style={{ display: "none"}}  onChange={(e) => setAvatar(e)} 
-              onClick={(event)=> {
-                event.target.value = null }}/>
           </div>
-        </div>
-        <div>
-          <Tab
-            className={styles.CardLessonLeftTab}
-            menu={{ secondary: true }}
-            panes={panes}
-          />
-        </div>
-        {user && user.id === classe.trainer.user.id ? (
-          <Form>
-            <Form.Field required>
-              <label>Lesson Name</label>
-              <input
-                required
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </Form.Field>
-            <Form.Group widths="equal">
+          <div className={styles.courseThumbnail} style={{position: 'relative'}}>
+            <img src={classe.featuredImage} alt="lessonThumbnail" />
+            <div className={styles.buttonAddAvatar}>
+              <label for="file-input">
+                {/* <Icon style={{ margin: "0", cursor: "pointer"}} name="plus" /> */}
+                Change thumbnail
+              </label>
+
+              <input id="file-input" type="file" style={{ display: "none"}}  onChange={(e) => setAvatar(e)} 
+                onClick={(event)=> {
+                  event.target.value = null }}/>
+            </div>
+          </div>
+          <div className={styles.courseThumbnail} style={{position: 'relative', height: 'unset'}}>
+            <Player>
+              <source src={classe.featuredvideo} />
+            </Player>
+
+          </div>
+          <div>
+            <Tab
+              className={styles.CardLessonLeftTab}
+              menu={{ secondary: true }}
+              panes={panes}
+            />
+          </div>
+          {user && user.id === classe.trainer.user.id ? (
+            <Form>
               <Form.Field required>
-                <label>Duration (minutes)</label>
+              <label>Lesson Name</label>
                 <input
                   required
-                  type="number"
-                  placeholder="duration class"
-                  value={duration}
-                  onChange={(e) => setDuration(e.target.value)}
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </Form.Field>
-              <Form.Field required>
-                <label>Time Start</label>
-                <DatePickerPage
-                  value={startTime}
-                  onChange={(date) => setStartTime(date)}
+              <Form.Group widths="equal">
+                <Form.Field required>
+                  <label>Duration (minutes)</label>
+                  <input
+                    required
+                    type="number"
+                    placeholder="duration class"
+                    value={duration}
+                    onChange={(e) => setDuration(e.target.value)}
+                  />
+                </Form.Field>
+                <Form.Field required>
+                  <label>Time Start</label>
+                  <DatePickerPage
+                    value={startTime}
+                    onChange={(date) => setStartTime(date)}
+                  />
+                </Form.Field>
+              </Form.Group>
+              <div style={{ margin: "20px 0", display: "flex", justifyContent: "center" }}>
+                <Button
+                  color="youtube"
+                  content="Reset"
+                  icon="close"
+                  onClick={(e) => {
+                    Reset(e);
+                  }}
                 />
-              </Form.Field>
-            </Form.Group>
-            <div style={{ margin: "20px 0", display: "flex", justifyContent: "center" }}>
               <Button
-                color="youtube"
-                content="Reset"
-                icon="close"
-                onClick={(e) => {
-                  Reset(e);
-                }}
-              />
-              <Button
-                content="Submit"
-                labelPosition="right"
-                icon="checkmark"
-                onClick={(e) => {
-                  Create(e);
-                }}
-                positive
-              />
-            </div>
-          </Form>
-        ) : (
-          ""
-        )}
+                  content="Submit"
+                  labelPosition="right"
+                  icon="checkmark"
+                  onClick={(e) => {
+                    Create(e);
+                  }}
+                  positive
+                />
+              </div>
+            </Form>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
-    </div>
+      </React.Fragment>
   );
 }
