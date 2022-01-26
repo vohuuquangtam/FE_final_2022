@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Button, Form, Tab } from "semantic-ui-react";
 import { useAuth } from "../../../contexts/auth";
 import Client from "../../../services/Client";
+import styles from "./CardProfile.module.scss";
 
 const fileInputRef = React.createRef();
 
@@ -26,6 +27,19 @@ const CardProfileSetting = ({ userAcc }) => {
     if (user) setEmail(user.email);
     if (user) setPhoneNumber(user.phoneNumber);
   }, [user]);
+
+  const chooseAvatar = async (item) => {
+    let formdata = new FormData();
+    let selectedFile = item.target.files[0];
+    // formdata.append("file", url);
+    formdata.append(
+      "file",
+      selectedFile,
+      selectedFile.name
+    );
+    const { data } = await Client(`upload`, "POST", formdata, "multipart/form-data");
+    setAvatarUrl(data.url);
+  };
 
   const Update = () => {
     let updateUser = {
@@ -98,16 +112,38 @@ const CardProfileSetting = ({ userAcc }) => {
                 </Form.Group>
                 <Form.Group widths={2}>
                 <Form.Field>
-                <label>Avatar</label>
-                    <Form.Input
-                      required
-                      value={avatarUrl}
-                      type="text"
-                      name="avatar"
-                      onChange={async (e) => setAvatarUrl(e.target.value)}
-                    />
-                </Form.Field>
+                  <label>Avatar</label>
+                      <Form.Input
+                        required
+                        value={avatarUrl}
+                        type="text"
+                        name="avatar"
+                        onChange={async (e) => setAvatarUrl(e.target.value)}
+                      />
+
+                  </Form.Field>
+                  <Form.Field style={{ paddingTop: '25px'}}>
+                  {/* <Button color="linkedin" type="submit">
+                     Change avatar
+                   </Button> */}
+                   <div color="linkedin" className={styles.buttonchooseAvatar}>
+                      <label for="file-input-preview">
+                        Change avatar
+                      </label>
+
+                      <input id="file-input-preview" type="file" style={{ display: "none"}}  onChange={(e) => chooseAvatar(e, false)} 
+                        onClick={(event)=> {
+                          event.target.value = null }}/>
+                    </div>
+                  </Form.Field>
                 </Form.Group>
+                <Form.Group>
+                  <Form.Field>
+                    <label>Preview avatar</label>
+                    <img src={avatarUrl} style={{ width: '100%'}} />
+                  </Form.Field>
+                </Form.Group>
+                
                 <Button color="linkedin" type="submit">
                   Submit
                 </Button>

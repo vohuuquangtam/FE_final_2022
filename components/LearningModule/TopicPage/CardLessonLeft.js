@@ -235,7 +235,7 @@ export default function CardLessonLeft({ classe, lessons }) {
           <div className={styles.courseThumbnail} style={{position: 'relative'}}>
             <img src={classe.featuredImage} alt="lessonThumbnail" />
             <div className={styles.buttonAddAvatar}>
-              <label for="file-input">
+            <label>
                 {/* <Icon style={{ margin: "0", cursor: "pointer"}} name="plus" /> */}
                 Change thumbnail
               </label>
