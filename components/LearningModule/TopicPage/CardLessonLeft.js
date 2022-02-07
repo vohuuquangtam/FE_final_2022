@@ -17,6 +17,7 @@ import Client from "../../../services/Client";
 import DatePickerPage from "../../DatePicker";
 import { Player } from 'video-react';
 import styles from "./CardTopicsPage.module.scss";
+import ThirdPartyClient from "../../../services/ThirdPartyClient";
 
 export default function CardLessonLeft({ classe, lessons }) {
   const router = useRouter();
@@ -26,6 +27,8 @@ export default function CardLessonLeft({ classe, lessons }) {
   const [name, setName] = useState("");
   const [duration, setDuration] = useState(0);
   const [startTime, setStartTime] = useState("");
+  const [featuredvideo, setFeaturedVideo] = useState(null);
+
 
   const Create = () => {
     if (!user)
@@ -35,6 +38,7 @@ export default function CardLessonLeft({ classe, lessons }) {
         name,
         duration: Number(duration),
         startTime: new Date(startTime).toISOString(),
+        featuredvideo
       })
         .then(({ data }) => {
           setName("");
@@ -53,6 +57,7 @@ export default function CardLessonLeft({ classe, lessons }) {
     setDuration(0);
     setStartTime("");
     router.push(`/classes/${classe.id}`);
+    setFeaturedVideo(null);
   };
 
   const setAvatar = async (item) => {
@@ -101,6 +106,23 @@ export default function CardLessonLeft({ classe, lessons }) {
     setActiveIndex({ activeIndex: [newIndex] });
   };
 
+  const setVideo = async (item) => {
+    let formdata = new FormData();
+    let selectedFile = item.target.files[0];
+    // formdata.append("file", url);
+    formdata.append(
+      "file",
+      selectedFile,
+      selectedFile.name
+    );
+    const { data } = await ThirdPartyClient(`files/upload`, "POST", formdata, "multipart/form-data");
+
+    if (data && data.fileDownloadUri){
+      setFeaturedVideo(data.fileDownloadUri);
+    }
+  };
+
+
   const renderPanes = async () => {
     console.log(activeIndex);
     return [
@@ -137,6 +159,11 @@ export default function CardLessonLeft({ classe, lessons }) {
                         </span>
                         : {moment(lesson.startTime).format("lll")}
                       </p>
+                      <div className={styles.courseThumbnail} style={{position: 'relative', height: 'unset'}}>
+                        <Player>
+                          <source src={lesson.featuredvideo} />
+                        </Player>
+                      </div>
                     </Accordion.Content>
                   </div>
                 );
@@ -267,6 +294,14 @@ export default function CardLessonLeft({ classe, lessons }) {
                   placeholder="Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                />
+              </Form.Field>
+              <Form.Field required>
+                <label>Lesson video</label>
+                <input id="file-input"
+                  type="file"
+                  placeholder="upload video"
+                  onChange={(e) => setVideo(e)}
                 />
               </Form.Field>
               <Form.Group widths="equal">
